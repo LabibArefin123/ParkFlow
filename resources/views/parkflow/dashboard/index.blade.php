@@ -11,7 +11,6 @@
 @endpush
 
 @section('content')
-
     <div class="container-fluid py-4">
         <div class="parkflow-dashboard">
             <div class="dashboard-header">

@@ -1,0 +1,24 @@
+@media (max-width: 768px) {
+    .parkflow-navbar {
+        height: 64px;
+    }
+
+    .parkflow-navbar-inner {
+        padding: 0 16px;
+    }
+
+    .parkflow-brand-subtitle,
+    .parkflow-user-info,
+    .parkflow-admin-link span {
+        display: none;
+    }
+
+    .parkflow-main {
+        min-height: calc(100vh - 64px);
+        padding: 18px 14px;
+    }
+
+    .parkflow-user {
+        padding-left: 4px;
+    }
+}

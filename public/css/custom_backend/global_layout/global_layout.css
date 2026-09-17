@@ -1,0 +1,17 @@
+.parkflow-main {
+    min-height: calc(100vh - 70px);
+    padding: 30px;
+}
+
+.parkflow-container {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.parkflow-footer {
+    padding: 22px 30px 30px;
+    color: #8a94a6;
+    font-size: 12px;
+    text-align: center;
+}
