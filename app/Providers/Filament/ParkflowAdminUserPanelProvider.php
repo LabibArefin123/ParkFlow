@@ -24,17 +24,26 @@ class ParkflowAdminUserPanelProvider extends PanelProvider
     public function panel(Panel $panel): Panel
     {
         return $panel
-            ->id('parkflow Admin User')
-            ->path('parkflow Admin User')
+            ->default()
+            ->id('admin')
+            ->path('admin')
+            ->login()
+            ->homeUrl(fn() => route('dashboard'))
             ->colors([
                 'primary' => Color::Amber,
             ])
-            ->discoverResources(in: app_path('Filament/ParkflowAdminUser/Resources'), for: 'App\Filament\ParkflowAdminUser\Resources')
-            ->discoverPages(in: app_path('Filament/ParkflowAdminUser/Pages'), for: 'App\Filament\ParkflowAdminUser\Pages')
-            ->pages([
-                Dashboard::class,
-            ])
-            ->discoverWidgets(in: app_path('Filament/ParkflowAdminUser/Widgets'), for: 'App\Filament\ParkflowAdminUser\Widgets')
+            ->discoverResources(
+                in: app_path('Filament/Resources'),
+                for: 'App\Filament\Resources'
+            )
+            ->discoverPages(
+                in: app_path('Filament/Pages'),
+                for: 'App\Filament\Pages'
+            )
+            ->discoverWidgets(
+                in: app_path('Filament/Widgets'),
+                for: 'App\Filament\Widgets'
+            )
             ->widgets([
                 AccountWidget::class,
                 FilamentInfoWidget::class,

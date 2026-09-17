@@ -1,0 +1,20 @@
+:root {
+    --pf-primary: #2563eb;
+    --pf-primary-dark: #1d4ed8;
+    --pf-dark: #0f172a;
+    --pf-muted: #64748b;
+    --pf-border: #e2e8f0;
+    --pf-bg: #f8fafc;
+    --pf-success: #16a34a;
+    --pf-danger: #dc2626;
+    --pf-warning: #d97706;
+}
+
+body {
+    background: var(--pf-bg);
+}
+
+.parkflow-dashboard {
+    max-width: 1600px;
+    margin: 0 auto;
+}
