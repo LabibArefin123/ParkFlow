@@ -6,6 +6,8 @@ class DashboardController extends Controller
 {
     public function __invoke()
     {
+        $user = auth()->user();
+
         $stats = [
             'total_spaces' => 120,
             'available_spaces' => 74,
@@ -91,6 +93,7 @@ class DashboardController extends Controller
         ];
 
         return view('parkflow.dashboard.index', compact(
+            'user',
             'stats',
             'activeSessions',
             'recentTransactions',

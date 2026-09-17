@@ -43,21 +43,34 @@
                 </a>
 
                 <div class="parkflow-navbar-right">
-                    <a href="{{ url('/admin') }}" class="parkflow-admin-link">
-                        <i class="fa-solid fa-shield-halved"></i>
-                        <span>Administration</span>
-                    </a>
-                    @auth
-                        <div class="parkflow-user">
-                            <div class="parkflow-user-avatar">
-                                {{ strtoupper(substr(auth()->user()->name ?? 'U', 0, 1)) }}
+                    <div class="parkflow-navbar-right">
+
+                        <a href="{{ route('administration') }}" class="parkflow-admin-link">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span>Administration</span>
+                        </a>
+
+                        @if ($user)
+                            <div class="parkflow-user">
+
+                                <div class="parkflow-user-avatar">
+                                    {{ strtoupper(substr($user->name ?? 'U', 0, 1)) }}
+                                </div>
+
+                                <div class="parkflow-user-info">
+                                    <span class="parkflow-user-name">
+                                        {{ $user->name ?? 'User' }}
+                                    </span>
+
+                                    <span class="parkflow-user-role">
+                                        ParkFlow Operator
+                                    </span>
+                                </div>
+
                             </div>
-                            <div class="parkflow-user-info">
-                                <span class="parkflow-user-name">{{ auth()->user()->name ?? 'User' }}</span>
-                                <span class="parkflow-user-role">ParkFlow Operator</span>
-                            </div>
-                        </div>
-                    @endauth
+                        @endif
+
+                    </div>
                 </div>
             </div>
         </header>
@@ -75,4 +88,5 @@
     </div>
     @stack('scripts')
 </body>
+
 </html>
