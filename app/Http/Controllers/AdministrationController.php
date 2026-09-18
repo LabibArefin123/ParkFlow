@@ -42,7 +42,7 @@ class AdministrationController extends Controller
                 'title' => 'Parking Spots',
                 'description' => 'Configure parking spaces and availability.',
                 'icon' => 'fa-square-parking',
-                'route' => 'parking.map',
+                'route' => 'parking_spots.index',
                 'count' => $stats['parking_spots'],
             ],
             [

@@ -1,0 +1,82 @@
+@media (max-width: 1100px) {
+    .parking-stats {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .parking-grid {
+        grid-template-columns: repeat(4, minmax(75px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .parking-map-page {
+        padding: 15px;
+    }
+
+    .parking-map-header {
+        flex-direction: column;
+    }
+
+    .parking-map-actions {
+        width: 100%;
+    }
+
+    .parking-location-select {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .parking-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .parking-map-toolbar {
+        align-items: stretch;
+    }
+
+    .parking-map-toolbar-left {
+        width: 100%;
+    }
+
+    .map-search {
+        width: 100%;
+    }
+
+    .map-search input {
+        width: 100%;
+    }
+
+    .parking-grid {
+        grid-template-columns: repeat(3, minmax(70px, 1fr));
+    }
+
+    .spot-detail-panel {
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+        width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .parking-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .parking-stat {
+        padding: 14px;
+    }
+
+    .parking-stat-value {
+        font-size: 22px;
+    }
+
+    .parking-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .parking-layout {
+        padding: 12px;
+    }
+}

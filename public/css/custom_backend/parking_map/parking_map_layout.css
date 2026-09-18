@@ -1,0 +1,75 @@
+.parking-layout{
+    background:#f8fafc;
+    border:1px solid #eef2f7;
+    border-radius:18px;
+    padding:20px;
+    min-height:430px;
+}
+
+.parking-lane{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:20px;
+    padding:10px;
+    border-radius:10px;
+    background:repeating-linear-gradient(
+        90deg,
+        #e2e8f0 0,
+        #e2e8f0 45px,
+        transparent 45px,
+        transparent 90px
+    );
+    color:#64748b;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+.parking-grid{
+    display:grid;
+    grid-template-columns:repeat(6,minmax(75px,1fr));
+    gap:12px;
+}
+
+.parking-legend{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    flex-wrap:wrap;
+    padding:18px 20px;
+    border-top:1px solid #eef2f7;
+}
+
+.legend-item{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    color:#64748b;
+    font-size:12px;
+    font-weight:600;
+}
+
+.legend-dot{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+}
+
+.legend-dot.available{
+    background:#10b981;
+}
+
+.legend-dot.occupied{
+    background:#ef4444;
+}
+
+.legend-dot.reserved{
+    background:#f59e0b;
+}
+
+.legend-dot.maintenance{
+    background:#8b5cf6;
+}

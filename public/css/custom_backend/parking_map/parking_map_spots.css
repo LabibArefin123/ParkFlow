@@ -1,0 +1,115 @@
+.parking-spot{
+    position:relative;
+    min-height:92px;
+    border:2px solid transparent;
+    border-radius:15px;
+    padding:11px;
+    cursor:pointer;
+    transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;
+    animation:spotAppear .45s ease both;
+}
+
+.parking-spot:hover{
+    transform:translateY(-4px);
+}
+
+@keyframes spotAppear{
+    from{
+        opacity:0;
+        transform:translateY(10px) scale(.97);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+.parking-spot.available{
+    background:#ecfdf5;
+    border-color:#a7f3d0;
+}
+
+.parking-spot.available:hover{
+    box-shadow:0 10px 25px rgba(16,185,129,.15);
+}
+
+.parking-spot.occupied{
+    background:#fef2f2;
+    border-color:#fecaca;
+}
+
+.parking-spot.occupied:hover{
+    box-shadow:0 10px 25px rgba(239,68,68,.15);
+}
+
+.parking-spot.reserved{
+    background:#fffbeb;
+    border-color:#fde68a;
+}
+
+.parking-spot.maintenance{
+    background:#f5f3ff;
+    border-color:#ddd6fe;
+}
+
+.spot-number{
+    color:#0f172a;
+    font-size:14px;
+    font-weight:800;
+}
+
+.spot-icon{
+    position:absolute;
+    right:11px;
+    top:11px;
+    font-size:15px;
+}
+
+.available .spot-icon{
+    color:#059669;
+}
+
+.occupied .spot-icon{
+    color:#dc2626;
+}
+
+.reserved .spot-icon{
+    color:#d97706;
+}
+
+.maintenance .spot-icon{
+    color:#7c3aed;
+}
+
+.spot-type{
+    margin-top:22px;
+    color:#64748b;
+    font-size:11px;
+    font-weight:700;
+    text-transform:capitalize;
+}
+
+.spot-status{
+    margin-top:3px;
+    font-size:10px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+}
+
+.available .spot-status{
+    color:#059669;
+}
+
+.occupied .spot-status{
+    color:#dc2626;
+}
+
+.reserved .spot-status{
+    color:#d97706;
+}
+
+.maintenance .spot-status{
+    color:#7c3aed;
+}
