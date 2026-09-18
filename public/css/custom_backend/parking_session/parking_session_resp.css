@@ -1,0 +1,50 @@
+@media (max-width: 900px) {
+    .session-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .sessions-page {
+        padding: 15px;
+    }
+
+    .sessions-header {
+        flex-direction: column;
+    }
+
+    .session-actions {
+        width: 100%;
+    }
+
+    .session-action-btn {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .session-toolbar {
+        align-items: stretch;
+    }
+
+    .session-search {
+        min-width: 100%;
+    }
+
+    .session-filter {
+        flex: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .session-stats {
+        gap: 10px;
+    }
+
+    .session-stat {
+        padding: 14px;
+    }
+
+    .session-stat-value {
+        font-size: 23px;
+    }
+}

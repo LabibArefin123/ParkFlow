@@ -6,6 +6,7 @@ use App\Http\Controllers\AdministrationController;
 use App\Http\Controllers\ParkingMapController;
 use App\Http\Controllers\ParkingLocationController;
 use App\Http\Controllers\ParkingSpotController;
+use App\Http\Controllers\ParkingSessionController;
 use App\Http\Controllers\VehicleEntryController;
 use App\Http\Controllers\ActiveSessionController;
 use App\Http\Controllers\VehicleExitController;
@@ -17,6 +18,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('parking_locations', ParkingLocationController::class);
     Route::resource('parking_spots', ParkingSpotController::class);
     Route::get('/parking-map', [ParkingMapController::class, 'index'])->name('parking.map');
+    Route::resource('parking_sessions', ParkingSessionController::class);
 
     Route::get('/vehicle-entry', [VehicleEntryController::class, 'create'])->name('vehicle.entry');
     Route::post('/vehicle-entry', [VehicleEntryController::class, 'store'])->name('vehicle.entry.store');

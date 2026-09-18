@@ -56,7 +56,7 @@ class AdministrationController extends Controller
                 'title' => 'Parking Sessions',
                 'description' => 'View and manage parking sessions.',
                 'icon' => 'fa-clock',
-                'route' => 'sessions.active',
+                'route' => 'parking_sessions.index',
                 'count' => $stats['active_sessions'],
             ],
             [

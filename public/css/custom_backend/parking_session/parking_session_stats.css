@@ -1,0 +1,68 @@
+.session-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.session-stat {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 18px;
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04);
+    transition: 0.25s ease;
+}
+
+.session-stat:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.session-stat-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.session-stat-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: #f1f5f9;
+    color: #475569;
+}
+
+.session-stat-label {
+    color: #64748b;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+.session-stat-value {
+    color: #0f172a;
+    font-size: 27px;
+    line-height: 1;
+    font-weight: 800;
+}
+
+.session-stat.active .session-stat-icon {
+    background: #ecfdf5;
+    color: #059669;
+}
+
+.session-stat.completed .session-stat-icon {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.session-stat.cancelled .session-stat-icon {
+    background: #fef2f2;
+    color: #dc2626;
+}

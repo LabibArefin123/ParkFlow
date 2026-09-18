@@ -1,0 +1,76 @@
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 10px;
+    border-radius: 9px;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.status-badge.active {
+    background: #ecfdf5;
+    color: #059669;
+}
+
+.status-badge.completed {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.status-badge.cancelled {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+.session-view-btn {
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e2e8f0;
+    border-radius: 9px;
+    background: #fff;
+    color: #64748b;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.session-view-btn:hover {
+    color: #0f172a;
+    border-color: #cbd5e1;
+    transform: translateY(-2px);
+}
+
+.empty-sessions {
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.empty-sessions-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    background: #f1f5f9;
+    color: #94a3b8;
+    font-size: 24px;
+}
+
+.empty-sessions h3 {
+    margin: 0 0 6px;
+    color: #475569;
+    font-size: 17px;
+}
+
+.empty-sessions p {
+    margin: 0;
+    color: #94a3b8;
+    font-size: 13px;
+}
