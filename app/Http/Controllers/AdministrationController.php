@@ -35,7 +35,7 @@ class AdministrationController extends Controller
                 'title' => 'Parking Locations',
                 'description' => 'Manage parking locations and facilities.',
                 'icon' => 'fa-location-dot',
-                'route' => '#',
+                'route' => 'parking_locations.index',
                 'count' => $stats['parking_locations'],
             ],
             [

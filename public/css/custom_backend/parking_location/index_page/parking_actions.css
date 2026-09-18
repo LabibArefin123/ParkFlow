@@ -1,0 +1,78 @@
+.location-actions-cell {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 7px;
+}
+
+.location-action {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e8ebf1;
+    border-radius: 9px;
+    background: #fff;
+    color: #64748b;
+    font-size: 12px;
+    transition: 0.2s ease;
+}
+
+.location-action:hover {
+    color: #d97706;
+    border-color: #f5c76b;
+    background: #fffbeb;
+}
+
+.location-delete {
+    border: 0;
+    cursor: pointer;
+}
+
+.location-empty {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.location-empty-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    border-radius: 15px;
+    background: #f8fafc;
+    color: #94a3b8;
+    font-size: 22px;
+}
+
+.location-empty h3 {
+    margin: 0;
+    color: #172033;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.location-empty p {
+    margin: 6px 0 18px;
+    color: #8992a3;
+    font-size: 12px;
+}
+
+.location-pagination {
+    display: flex;
+    justify-content: center;
+    padding: 18px;
+    border-top: 1px solid #edf0f4;
+}
+
+.location-pagination nav {
+    display: flex;
+}
+
+.location-pagination svg {
+    width: 16px;
+    height: 16px;
+}

@@ -55,7 +55,7 @@ class ParkingLocationController extends Controller
         ParkingLocation::create($validated);
 
         return redirect()
-            ->route('parking.locations.index')
+            ->route('parking_locations.index')
             ->with('success', 'Parking location created successfully.');
     }
 
@@ -63,14 +63,14 @@ class ParkingLocationController extends Controller
     {
         if ($parkingLocation->parkingSpots()->exists()) {
             return redirect()
-                ->route('parking.locations.index')
+                ->route('parking_locations.index')
                 ->with('error', 'This parking location cannot be deleted because it has parking spots.');
         }
 
         $parkingLocation->delete();
 
         return redirect()
-            ->route('parking.locations.index')
+            ->route('parking_locations.index')
             ->with('success', 'Parking location deleted successfully.');
     }
 }
