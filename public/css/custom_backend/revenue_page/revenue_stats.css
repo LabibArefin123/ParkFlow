@@ -1,0 +1,77 @@
+/* Revenue Statistics */
+.revenue-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.revenue-stat {
+    position: relative;
+    overflow: hidden;
+    padding: 19px;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 6px 20px rgba(15, 23, 42, .04);
+    transition: .2s ease;
+}
+
+.revenue-stat:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(15, 23, 42, .08);
+}
+
+.revenue-stat-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 17px;
+}
+
+.revenue-stat-label {
+    color: #64748b;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .6px;
+}
+
+.revenue-stat-icon {
+    width: 39px;
+    height: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 11px;
+    background: #f1f5f9;
+    color: #475569;
+}
+
+.revenue-stat-value {
+    color: #0f172a;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.revenue-stat-meta {
+    margin-top: 8px;
+    color: #94a3b8;
+    font-size: 10px;
+}
+
+.revenue-stat.today .revenue-stat-icon {
+    background: #ecfdf5;
+    color: #059669;
+}
+
+.revenue-stat.month .revenue-stat-icon {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.revenue-stat.transactions .revenue-stat-icon {
+    background: #f5f3ff;
+    color: #7c3aed;
+}

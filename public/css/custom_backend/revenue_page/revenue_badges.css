@@ -1,0 +1,56 @@
+/* Revenue Payment & Status Badges */
+.method-badge,
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 9px;
+    border-radius: 8px;
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.method-badge {
+    background: #f1f5f9;
+    color: #475569;
+}
+
+.method-badge.cash {
+    background: #ecfdf5;
+    color: #059669;
+}
+
+.method-badge.bkash {
+    background: #fdf2f8;
+    color: #be185d;
+}
+
+.method-badge.nagad {
+    background: #fff7ed;
+    color: #ea580c;
+}
+
+.method-badge.card {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.status-badge {
+    text-transform: uppercase;
+}
+
+.status-badge.paid {
+    background: #ecfdf5;
+    color: #059669;
+}
+
+.status-badge.pending {
+    background: #fff7ed;
+    color: #ea580c;
+}
+
+.status-badge.failed,
+.status-badge.cancelled {
+    background: #fef2f2;
+    color: #dc2626;
+}

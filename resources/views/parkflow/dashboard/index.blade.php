@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{{ asset('css/custom_backend/dashboard/dashboard_header.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom_backend/dashboard/dashboard_card.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom_backend/dashboard/dashboard_panel.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/dashboard/dashboard_trans.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom_backend/dashboard/dashboard_session.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom_backend/dashboard/dashboard_resp.css') }}">
 @endpush
@@ -170,65 +171,113 @@
             </div>
 
             <div class="panel mb-4">
-
                 <div class="panel-header">
-                    <h2 class="panel-title">Recent Transactions</h2>
-                    <a href="{{ route('revenue.index') }}" class="panel-link">View Revenue</a>
+                    <div>
+                        <h2 class="panel-title">Recent Transactions</h2>
+                        <p class="panel-subtitle">Latest completed parking payments</p>
+                    </div>
+
+                    <a href="{{ route('revenue.index') }}" class="panel-link">
+                        View Revenue
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
 
                 <div class="table-wrapper">
-
-                    <table class="transactions">
-
-                        <thead>
-                            <tr>
-                                <th>Ticket</th>
-                                <th>Vehicle</th>
-                                <th>Payment</th>
-                                <th>Amount</th>
-                                <th>Time</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-
-                            @foreach ($recentTransactions as $transaction)
+                    @if ($recentTransactions->count())
+                        <table class="transactions">
+                            <thead>
                                 <tr>
-                                    <td>
-                                        <span class="ticket">
-                                            {{ $transaction['ticket'] }}
-                                        </span>
-                                    </td>
-
-                                    <td>
-                                        {{ $transaction['vehicle'] }}
-                                    </td>
-
-                                    <td>
-                                        <span class="payment-badge">
-                                            {{ $transaction['payment'] }}
-                                        </span>
-                                    </td>
-
-                                    <td>
-                                        <span class="amount">
-                                            ৳{{ number_format($transaction['amount']) }}
-                                        </span>
-                                    </td>
-
-                                    <td>
-                                        {{ $transaction['time'] }}
-                                    </td>
+                                    <th>Transaction</th>
+                                    <th>Vehicle</th>
+                                    <th>Payment</th>
+                                    <th>Amount</th>
+                                    <th>Time</th>
                                 </tr>
-                            @endforeach
+                            </thead>
 
-                        </tbody>
+                            <tbody>
 
-                    </table>
+                                @foreach ($recentTransactions as $transaction)
+                                    <tr>
+                                        <td>
+                                            <div class="transaction-ticket">
+                                                <span class="ticket">{{ $transaction->transaction_id }}</span>
+                                                <small>Payment #{{ $transaction->id }}</small>
+                                            </div>
+                                        </td>
 
+                                        <td>
+                                            <div class="transaction-vehicle">
+                                                <div class="transaction-vehicle-icon">
+                                                    <i class="fa-solid fa-car-side"></i>
+                                                </div>
+                                                <div>
+                                                    <strong>
+                                                        {{ $transaction->parkingSession?->vehicle?->registration_number ?? 'Unknown Vehicle' }}
+                                                    </strong>
+
+                                                    @if ($transaction->parkingSession?->vehicle?->type)
+                                                        <small>
+                                                            {{ ucfirst($transaction->parkingSession->vehicle->type) }}
+                                                        </small>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        </td>
+
+                                        <td>
+                                            <span class="payment-badge {{ strtolower($transaction->payment_method) }}">
+                                                @if (strtolower($transaction->payment_method) === 'cash')
+                                                    <i class="fa-solid fa-money-bill-wave"></i>
+                                                @elseif(strtolower($transaction->payment_method) === 'bkash')
+                                                    <i class="fa-solid fa-mobile-screen-button"></i>
+                                                @elseif(strtolower($transaction->payment_method) === 'nagad')
+                                                    <i class="fa-solid fa-mobile-screen-button"></i>
+                                                @elseif(strtolower($transaction->payment_method) === 'card')
+                                                    <i class="fa-solid fa-credit-card"></i>
+                                                @else
+                                                    <i class="fa-solid fa-wallet"></i>
+                                                @endif
+
+                                                {{ $transaction->payment_method }}
+                                            </span>
+                                        </td>
+
+                                        <td>
+                                            <span class="amount">
+                                                ৳{{ number_format($transaction->amount, 2) }}
+                                            </span>
+                                        </td>
+
+                                        <td>
+                                            <div class="transaction-time">
+                                                <strong>
+                                                    {{ $transaction->paid_at?->format('h:i A') ?? '-' }}
+                                                </strong>
+                                                <small>
+                                                    {{ $transaction->paid_at?->format('d M Y') ?? '-' }}
+                                                </small>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    @else
+                        <div class="transactions-empty">
+                            <div class="transactions-empty-icon">
+                                <i class="fa-solid fa-receipt"></i>
+                            </div>
+
+                            <h3>No transactions yet</h3>
+                            <p>
+                                Completed parking payments will appear here.
+                            </p>
+                        </div>
+                    @endif
                 </div>
             </div>
-
             <div class="panel">
 
                 <div class="panel-header">
@@ -279,6 +328,6 @@
             </div>
 
         </div>
-        
+
     </div>
 @endsection

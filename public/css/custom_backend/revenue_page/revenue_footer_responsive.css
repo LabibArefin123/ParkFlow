@@ -1,0 +1,74 @@
+/* Revenue Pagination, Empty State & Responsive */
+.revenue-pagination {
+    padding: 16px 20px;
+    border-top: 1px solid #eef2f7;
+}
+
+.revenue-empty {
+    padding: 65px 20px;
+    text-align: center;
+}
+
+.revenue-empty-icon {
+    width: 62px;
+    height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 14px;
+    border-radius: 17px;
+    background: #f1f5f9;
+    color: #94a3b8;
+    font-size: 23px;
+}
+
+.revenue-empty h3 {
+    margin: 0 0 5px;
+    color: #475569;
+    font-size: 16px;
+}
+
+.revenue-empty p {
+    margin: 0;
+    color: #94a3b8;
+    font-size: 12px;
+}
+
+@media (max-width: 1000px) {
+    .revenue-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .revenue-page {
+        padding: 15px;
+    }
+
+    .revenue-header {
+        flex-direction: column;
+    }
+
+    .revenue-action {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .revenue-search {
+        min-width: 100%;
+    }
+
+    .revenue-filter {
+        flex: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .revenue-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .revenue-title h1 {
+        font-size: 21px;
+    }
+}

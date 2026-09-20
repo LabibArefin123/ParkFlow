@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Payment;
 
 class DashboardController extends Controller
 {
@@ -46,36 +47,13 @@ class DashboardController extends Controller
             ],
         ];
 
-        $recentTransactions = [
-            [
-                'ticket' => 'PF-20260917-00124',
-                'vehicle' => 'DHAKA METRO-GA-11-4587',
-                'amount' => 120,
-                'payment' => 'Cash',
-                'time' => '12:49 PM',
-            ],
-            [
-                'ticket' => 'PF-20260917-00123',
-                'vehicle' => 'DHAKA METRO-HA-13-7788',
-                'amount' => 180,
-                'payment' => 'bKash',
-                'time' => '12:37 PM',
-            ],
-            [
-                'ticket' => 'PF-20260917-00122',
-                'vehicle' => 'DHAKA METRO-KA-14-5567',
-                'amount' => 100,
-                'payment' => 'Cash',
-                'time' => '12:18 PM',
-            ],
-            [
-                'ticket' => 'PF-20260917-00121',
-                'vehicle' => 'DHAKA METRO-CHA-16-2381',
-                'amount' => 250,
-                'payment' => 'Card',
-                'time' => '11:56 AM',
-            ],
-        ];
+        $recentTransactions = Payment::with([
+            'parkingSession.vehicle'
+        ])
+            ->where('status', 'paid')
+            ->latest('paid_at')
+            ->take(8)
+            ->get();
 
         $parkingSpots = [
             ['number' => 'A-01', 'status' => 'available'],
