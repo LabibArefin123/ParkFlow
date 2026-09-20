@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ asset('css/custom_backend/revenue_page/revenue_toolbar.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom_backend/revenue_page/revenue_table.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom_backend/revenue_page/revenue_badges.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/revenue_page/revenue_paginate.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom_backend/revenue_page/revenue_footer_responsive.css') }}">
     <div class="revenue-page">
 
