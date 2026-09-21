@@ -1,0 +1,29 @@
+.vehicle-exit-create {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 10px 0 40px;
+}
+
+.exit-create-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(350px, 0.8fr);
+    gap: 18px;
+    align-items: start;
+}
+
+.exit-session-panel,
+.exit-payment-panel {
+    border: 1px solid #e8edf3;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 6px 22px rgba(15, 23, 42, 0.04);
+}
+
+.exit-session-panel {
+    padding: 22px;
+}
+
+.exit-payment-panel {
+    padding: 22px;
+}

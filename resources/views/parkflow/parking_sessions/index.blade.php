@@ -25,7 +25,7 @@
             </div>
 
             <div class="session-actions">
-                <a href="{{ route('vehicle.entry') }}" class="session-action-btn primary">
+                <a href="{{ route('vehicle_entries.index') }}" class="session-action-btn primary">
                     <i class="fa-solid fa-right-to-bracket"></i>
                     Vehicle Entry
                 </a>

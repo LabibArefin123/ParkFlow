@@ -19,14 +19,10 @@ Route::middleware('auth')->group(function () {
     Route::resource('parking_spots', ParkingSpotController::class);
     Route::get('/parking-map', [ParkingMapController::class, 'index'])->name('parking.map');
     Route::resource('parking_sessions', ParkingSessionController::class);
-
-    Route::get('/vehicle-entry', [VehicleEntryController::class, 'create'])->name('vehicle.entry');
-    Route::post('/vehicle-entry', [VehicleEntryController::class, 'store'])->name('vehicle.entry.store');
+    Route::resource('vehicle_entries', VehicleEntryController::class);
+    Route::resource('vehicle_exits', VehicleExitController::class);
 
     Route::get('/active-sessions', [ActiveSessionController::class, 'index'])->name('sessions.active');
-
-    Route::get('/vehicle-exit', [VehicleExitController::class, 'create'])->name('vehicle.exit');
-    Route::post('/vehicle-exit/{session}/complete', [VehicleExitController::class, 'complete'])->name('vehicle.exit.complete');
 
     Route::get('/revenue', [RevenueController::class, 'index'])->name('revenue.index');
 });

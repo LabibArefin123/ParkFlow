@@ -1,0 +1,20 @@
+@media (max-width: 900px) {
+    .exit-create-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .exit-create-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .back-exit-btn {
+        width: 100%;
+    }
+
+    .session-info-grid {
+        grid-template-columns: 1fr;
+    }
+}

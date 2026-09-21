@@ -1,0 +1,39 @@
+@media (max-width: 1000px) {
+    .entry-content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .entry-side-card {
+        order: 2;
+    }
+}
+
+@media (max-width: 800px) {
+    .entry-stat-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .vehicle-entry-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .entry-primary-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .vehicle-entry-header h1 {
+        font-size: 23px;
+    }
+
+    .location-entry-card {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .location-entry-btn {
+        width: 100%;
+    }
+}

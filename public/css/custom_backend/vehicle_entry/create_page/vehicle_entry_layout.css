@@ -1,0 +1,28 @@
+.vehicle-entry-page {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 10px 0 35px;
+}
+
+.vehicle-entry-form {
+    width: 100%;
+}
+
+.entry-form-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 18px;
+}
+
+.entry-form-card {
+    padding: 22px;
+    border: 1px solid #e8edf3;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 5px 20px rgba(15, 23, 42, 0.035);
+}
+
+.entry-form-card:nth-child(3) {
+    grid-column: 1 / -1;
+}

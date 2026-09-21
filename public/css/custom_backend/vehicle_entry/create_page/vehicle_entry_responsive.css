@@ -1,0 +1,37 @@
+@media (max-width: 800px) {
+    .entry-form-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .entry-form-card:nth-child(3) {
+        grid-column: auto;
+    }
+
+    .vehicle-entry-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .entry-back-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .vehicle-entry-header h1 {
+        font-size: 23px;
+    }
+
+    .form-fields-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .entry-form-actions {
+        flex-direction: column-reverse;
+    }
+
+    .entry-cancel-btn,
+    .entry-submit-btn {
+        width: 100%;
+    }
+}
