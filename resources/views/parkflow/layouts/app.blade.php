@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="{{ asset('css/custom_backend/global_layout/global_navbar.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom_backend/global_layout/global_user.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom_backend/global_layout/global_layout.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/global_layout/global_image.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom_backend/global_layout/global_resp.css') }}">
 
     {{-- Page Specific CSS --}}
@@ -36,8 +37,9 @@
             <div class="parkflow-navbar-inner">
                 <a href="{{ route('dashboard') }}" class="parkflow-brand">
                     <div class="parkflow-brand-icon">
-                        <i class="fa-solid fa-square-parking"></i>
+                        <img src="{{ asset('images/logo.png') }}" alt="ParkFlow Logo">
                     </div>
+
                     <div class="parkflow-brand-text">
                         <span class="parkflow-brand-name">ParkFlow</span>
                         <span class="parkflow-brand-subtitle">Parking Management</span>
