@@ -12,8 +12,11 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-    <link rel="stylesheet" href="{{ asset('css/custom_backend/auth/login.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/auth/login_base.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/auth/login_background.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/auth/login_header.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/auth/login_form.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/auth/login_footer.css') }}">
 </head>
 
 <body>

@@ -1,0 +1,45 @@
+.parkflow-login-background {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.login-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(1px);
+}
+
+.login-orb-one {
+    width: 380px;
+    height: 380px;
+    top: -180px;
+    left: -120px;
+    background: rgba(37, 99, 235, 0.07);
+}
+
+.login-orb-two {
+    width: 420px;
+    height: 420px;
+    right: -180px;
+    bottom: -210px;
+    background: rgba(59, 130, 246, 0.06);
+}
+
+.login-grid {
+    position: absolute;
+    inset: 0;
+    opacity: 0.35;
+    background-image:
+        linear-gradient(rgba(148, 163, 184, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+    background-size: 42px 42px;
+    mask-image: linear-gradient(
+        to bottom,
+        transparent,
+        #000 20%,
+        #000 80%,
+        transparent
+    );
+}

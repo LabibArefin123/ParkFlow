@@ -3,8 +3,13 @@
 @section('title', 'Reports')
 
 @section('content')
-
-    <link rel="stylesheet" href="{{ asset('css/custom_backend/report_page/report.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/report_page/report_base.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/report_page/report_header.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/report_page/report_filter.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/report_page/report_stats.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/report_page/report_panels.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/report_page/report_table.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/report_page/report_responsive.css') }}">
     <div class="reports-page">
 
         <div class="reports-header">

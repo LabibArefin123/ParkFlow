@@ -1,0 +1,138 @@
+.report-empty {
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.report-empty i {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    border-radius: 13px;
+    background: #f1f5f9;
+    color: #94a3b8;
+    font-size: 18px;
+}
+
+.report-empty strong {
+    color: #475569;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.report-empty span {
+    margin-top: 4px;
+    color: #94a3b8;
+    font-size: 9px;
+}
+
+.mini-empty {
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    color: #94a3b8;
+    font-size: 10px;
+}
+
+.mini-empty i {
+    font-size: 12px;
+}
+
+@media (max-width: 1100px) {
+    .report-filter-card {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .report-filter-fields {
+        justify-content: flex-start;
+    }
+
+    .report-stat-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 850px) {
+    .report-content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .reports-page {
+        padding: 5px 0 30px;
+    }
+
+    .reports-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .reports-header h1 {
+        font-size: 24px;
+    }
+
+    .report-filter-fields {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .report-field {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .report-filter-buttons {
+        width: 100%;
+    }
+
+    .generate-report-btn {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .report-stat-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .report-period {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .report-panel {
+        padding: 14px;
+    }
+}
+
+@media print {
+    .reports-header-actions,
+    .report-filter-card,
+    .report-view-link {
+        display: none !important;
+    }
+
+    .reports-page {
+        max-width: none;
+        padding: 0;
+    }
+
+    .report-panel,
+    .report-stat {
+        box-shadow: none;
+        break-inside: avoid;
+    }
+
+    .report-stat-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
