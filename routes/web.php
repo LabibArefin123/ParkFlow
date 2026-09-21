@@ -11,7 +11,18 @@ use App\Http\Controllers\VehicleEntryController;
 use App\Http\Controllers\ActiveSessionController;
 use App\Http\Controllers\VehicleExitController;
 use App\Http\Controllers\RevenueController;
+use App\Http\Controllers\ReportController;
+use App\Http\Controllers\AuthController;
 
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
+    Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
+});
+
+Route::post('/logout', [AuthController::class, 'logout'])
+    ->middleware('auth')
+    ->name('logout');
+    
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', DashboardController::class)->name('dashboard');
     Route::get('/admin', [AdministrationController::class, 'index'])->name('administration');
@@ -25,6 +36,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/active-sessions', [ActiveSessionController::class, 'index'])->name('sessions.active');
 
     Route::get('/revenue', [RevenueController::class, 'index'])->name('revenue.index');
+    Route::get('/reports', [ReportController::class, 'index'])->name('reports.index');
 });
 
 Route::get('/', function () {

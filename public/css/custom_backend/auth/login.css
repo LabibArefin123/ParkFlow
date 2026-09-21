@@ -1,0 +1,446 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background: #f8fafc;
+    color: #0f172a;
+}
+
+.parkflow-login {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(37, 99, 235, 0.08),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 90%,
+            rgba(59, 130, 246, 0.07),
+            transparent 32%
+        ),
+        #f8fafc;
+}
+
+.parkflow-login-background {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.login-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(1px);
+}
+
+.login-orb-one {
+    width: 380px;
+    height: 380px;
+    top: -180px;
+    left: -120px;
+    background: rgba(37, 99, 235, 0.07);
+}
+
+.login-orb-two {
+    width: 420px;
+    height: 420px;
+    right: -180px;
+    bottom: -210px;
+    background: rgba(59, 130, 246, 0.06);
+}
+
+.login-grid {
+    position: absolute;
+    inset: 0;
+    opacity: 0.35;
+    background-image:
+        linear-gradient(rgba(148, 163, 184, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+    background-size: 42px 42px;
+    mask-image: linear-gradient(
+        to bottom,
+        transparent,
+        #000 20%,
+        #000 80%,
+        transparent
+    );
+}
+
+.parkflow-login-card {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 450px;
+    padding: 34px;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow:
+        0 30px 80px rgba(15, 23, 42, 0.1),
+        0 8px 30px rgba(15, 23, 42, 0.05);
+    backdrop-filter: blur(18px);
+}
+
+.parkflow-login-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.parkflow-login-logo {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 13px;
+    background: linear-gradient(135deg, #0f172a, #1e3a8a);
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(30, 58, 138, 0.2);
+}
+
+.parkflow-login-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.parkflow-login-logo i {
+    font-size: 21px;
+}
+
+.parkflow-login-brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.parkflow-login-brand-text strong {
+    color: #0f172a;
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.parkflow-login-brand-text span {
+    color: #94a3b8;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.parkflow-login-heading {
+    margin-bottom: 25px;
+}
+
+.parkflow-login-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 9px;
+    color: #2563eb;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.parkflow-login-eyebrow i {
+    font-size: 10px;
+}
+
+.parkflow-login-heading h1 {
+    margin: 0;
+    color: #0f172a;
+    font-size: 29px;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+}
+
+.parkflow-login-heading p {
+    max-width: 360px;
+    margin: 8px 0 0;
+    color: #64748b;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.login-alert {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    margin-bottom: 18px;
+    padding: 11px 13px;
+    border-radius: 11px;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.login-alert i {
+    margin-top: 1px;
+}
+
+.login-alert-success {
+    border: 1px solid #bbf7d0;
+    background: #f0fdf4;
+    color: #15803d;
+}
+
+.login-alert-danger {
+    border: 1px solid #fecaca;
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+.parkflow-login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+.login-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.login-field label {
+    color: #334155;
+    font-size: 11px;
+    font-weight: 750;
+}
+
+.login-label-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.login-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: #fff;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.login-input:focus-within {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.07);
+}
+
+.login-input > i {
+    width: 44px;
+    text-align: center;
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.login-input input {
+    width: 100%;
+    height: 46px;
+    padding: 0 13px 0 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #0f172a;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.login-input input::placeholder {
+    color: #cbd5e1;
+}
+
+.password-toggle {
+    width: 42px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 0;
+    background: transparent;
+    color: #94a3b8;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.password-toggle:hover {
+    color: #2563eb;
+}
+
+.login-field-error {
+    color: #dc2626;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.login-remember {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: -1px;
+    color: #64748b;
+    font-size: 11px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.login-remember input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.login-checkmark {
+    width: 17px;
+    height: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid #cbd5e1;
+    border-radius: 5px;
+    background: #fff;
+    color: #fff;
+    font-size: 8px;
+    transition: 0.2s ease;
+}
+
+.login-remember input:checked + .login-checkmark {
+    border-color: #2563eb;
+    background: #2563eb;
+}
+
+.parkflow-login-button {
+    position: relative;
+    width: 100%;
+    min-height: 49px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 2px;
+    border: 0;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #1d4ed8, #2563eb);
+    color: #fff;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 750;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.parkflow-login-button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        transparent 20%,
+        rgba(255, 255, 255, 0.14),
+        transparent 80%
+    );
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+}
+
+.parkflow-login-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 30px rgba(37, 99, 235, 0.25);
+}
+
+.parkflow-login-button:hover::before {
+    transform: translateX(100%);
+}
+
+.parkflow-login-button i {
+    font-size: 11px;
+    transition: transform 0.2s ease;
+}
+
+.parkflow-login-button:hover i {
+    transform: translateX(3px);
+}
+
+.parkflow-login-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 24px;
+    padding-top: 17px;
+    border-top: 1px solid #f1f5f9;
+    color: #94a3b8;
+    font-size: 9px;
+    font-weight: 600;
+}
+
+.parkflow-login-footer span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.parkflow-login-footer i {
+    color: #22c55e;
+    font-size: 5px;
+}
+
+@media (max-width: 520px) {
+    .parkflow-login {
+        padding: 20px 14px;
+    }
+
+    .parkflow-login-card {
+        padding: 27px 21px;
+        border-radius: 20px;
+    }
+
+    .parkflow-login-brand {
+        margin-bottom: 25px;
+    }
+
+    .parkflow-login-heading h1 {
+        font-size: 26px;
+    }
+
+    .parkflow-login-footer {
+        flex-direction: column;
+        justify-content: center;
+        gap: 6px;
+        text-align: center;
+    }
+}
