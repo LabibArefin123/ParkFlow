@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="{{ asset('css/custom_backend/global_layout/global_user.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom_backend/global_layout/global_layout.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom_backend/global_layout/global_image.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/global_layout/global_footer.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom_backend/global_layout/global_resp.css') }}">
 
     {{-- Page Specific CSS --}}
@@ -84,10 +85,17 @@
                 @yield('content')
             </div>
         </main>
-
         <footer class="parkflow-footer">
-            © {{ date('Y') }} ParkFlow.
-            Parking management made simple.
+            <div class="parkflow-footer-left">
+                © {{ date('Y') }} ParkFlow. Parking management made simple.
+            </div>
+
+            <div class="parkflow-footer-right">
+                Design and Developed by
+                <a href="https://labib.work" target="_blank" rel="noopener noreferrer">
+                    Md. Labib Arefin
+                </a>
+            </div>
         </footer>
     </div>
     @stack('scripts')
