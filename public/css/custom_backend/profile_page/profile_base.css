@@ -1,0 +1,38 @@
+.parkflow-profile-page {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 8px 0 35px;
+}
+
+.parkflow-profile-page *,
+.parkflow-profile-page *::before,
+.parkflow-profile-page *::after {
+    box-sizing: border-box;
+}
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 18px;
+}
+
+.profile-card {
+    width: 100%;
+    min-width: 0;
+    padding: 22px;
+    border: 1px solid #e5eaf1;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 8px 28px rgba(15, 23, 42, 0.045);
+}
+
+.profile-overview-card,
+.profile-personal-card {
+    grid-column: span 1;
+}
+
+.profile-password-card,
+.profile-security-summary {
+    grid-column: 1 / -1;
+}

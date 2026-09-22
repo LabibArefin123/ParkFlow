@@ -13,6 +13,7 @@ use App\Http\Controllers\VehicleExitController;
 use App\Http\Controllers\RevenueController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProfileController;
 
 Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
@@ -24,6 +25,9 @@ Route::post('/logout', [AuthController::class, 'logout'])
     ->name('logout');
     
 Route::middleware('auth')->group(function () {
+    Route::get('/profile',[ProfileController::class,'index'])->name('profile.index');
+    Route::put('/profile',[ProfileController::class,'update'])->name('profile.update');
+    Route::put('/profile/password',[ProfileController::class,'updatePassword'])->name('profile.password.update');
     Route::get('/dashboard', DashboardController::class)->name('dashboard');
     Route::get('/admin', [AdministrationController::class, 'index'])->name('administration');
     Route::resource('parking_locations', ParkingLocationController::class);

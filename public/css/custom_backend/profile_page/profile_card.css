@@ -1,0 +1,49 @@
+.profile-card-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 40px;
+    margin-bottom: 21px;
+}
+
+.profile-card-top > div {
+    min-width: 0;
+}
+
+.profile-card-icon {
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 11px;
+    background: #eff6ff;
+    color: #2563eb;
+    font-size: 16px;
+}
+
+.profile-card-top h3 {
+    margin: 0 0 3px;
+    color: #0f172a;
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1.35;
+}
+
+.profile-card-top p {
+    margin: 0;
+    color: #94a3b8;
+    font-size: 11.5px;
+    line-height: 1.45;
+}
+
+.password-icon {
+    background: #f1f5f9;
+    color: #0f172a;
+}
+
+.security-status-icon {
+    background: #ecfdf5;
+    color: #16a34a;
+}
