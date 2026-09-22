@@ -1,0 +1,117 @@
+/* =========================================================
+   ParkFlow Sidebar Base
+   ========================================================= */
+
+.parkflow-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1100;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #0b1220;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 12px 0 35px rgba(15, 23, 42, 0.08);
+}
+
+.parkflow-sidebar-brand {
+    height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 17px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.parkflow-sidebar-brand-link {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    min-width: 0;
+    color: #fff;
+}
+
+.parkflow-sidebar-logo {
+    width: 39px;
+    height: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 11px;
+    background: linear-gradient(145deg, #2563eb, #0ea5e9);
+    box-shadow: 0 7px 20px rgba(37, 99, 235, 0.28);
+}
+
+.parkflow-sidebar-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.parkflow-sidebar-brand-text {
+    min-width: 0;
+}
+
+.parkflow-sidebar-brand-text strong {
+    display: block;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: -0.35px;
+}
+
+.parkflow-sidebar-brand-text span {
+    display: block;
+    margin-top: 2px;
+    color: #64748b;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.parkflow-sidebar-close {
+    display: none;
+    width: 31px;
+    height: 31px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.04);
+    color: #94a3b8;
+}
+
+.parkflow-sidebar-scroll {
+    flex: 1;
+    overflow-y: auto;
+    padding: 18px 11px;
+}
+
+.parkflow-sidebar-scroll::-webkit-scrollbar {
+    width: 4px;
+}
+
+.parkflow-sidebar-scroll::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #1e293b;
+}
+
+.parkflow-sidebar-section {
+    margin-bottom: 22px;
+}
+
+.parkflow-sidebar-heading {
+    padding: 0 10px;
+    margin-bottom: 7px;
+    color: #475569;
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+}

@@ -24,12 +24,17 @@
     <link rel="stylesheet" href="{{ asset('css/custom_backend/global_layout/global_layout.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom_backend/global_layout/global_image.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom_backend/global_layout/global_footer.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/global_layout/global_sidebar/global_sidebar_base.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/global_layout/global_sidebar/global_sidebar_menu.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/global_layout/global_sidebar/global_sidebar_footer.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/global_layout/global_sidebar/global_sidebar_layout.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom_backend/global_layout/global_resp.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/custom_backend/global_layout/global_sidebar.css') }}">
 
     {{-- Notification CSS --}}
-    <link rel="stylesheet" href="{{ asset('css/custom_backend/notification_part/notifications.css') }}">
-
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/notification_part/notifications_base.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/notification_part/notifications_content.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/notification_part/notifications_types.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/notification_part/notifications_resp.css') }}">
     @stack('styles')
 </head>
 

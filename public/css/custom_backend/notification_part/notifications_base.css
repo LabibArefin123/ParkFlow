@@ -1,0 +1,27 @@
+/* =========================================================
+   ParkFlow Notifications Base
+   ========================================================= */
+
+.swal2-container.swal2-top-end {
+    top: 18px !important;
+    right: 18px !important;
+    left: auto !important;
+    padding: 0 !important;
+    z-index: 99999 !important;
+}
+
+.parkflow-toast {
+    width: 370px !important;
+    max-width: calc(100vw - 30px) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    border: 1px solid rgba(226, 232, 240, 0.95) !important;
+    border-radius: 16px !important;
+    background: rgba(255, 255, 255, 0.97) !important;
+    box-shadow:
+        0 22px 55px rgba(15, 23, 42, 0.13),
+        0 6px 20px rgba(15, 23, 42, 0.06) !important;
+    backdrop-filter: blur(18px);
+    text-align: left !important;
+}

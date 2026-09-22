@@ -1,0 +1,191 @@
+/* =========================================================
+   ParkFlow Main Layout
+   ========================================================= */
+
+.parkflow-content-area {
+    width: calc(100% - 250px);
+    min-height: 100vh;
+    margin-left: 250px;
+}
+
+/* =========================================================
+   Premium Topbar
+   ========================================================= */
+
+.parkflow-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.94);
+    border-bottom: 1px solid #e8ebf2;
+    box-shadow: 0 2px 14px rgba(15, 23, 42, 0.035);
+    backdrop-filter: blur(14px);
+}
+
+.parkflow-navbar-inner {
+    width: 100%;
+    height: 100%;
+    padding: 0 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.parkflow-navbar-left,
+.parkflow-navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.parkflow-navbar-left {
+    gap: 13px;
+}
+
+.parkflow-mobile-toggle {
+    display: none;
+    width: 36px;
+    height: 36px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e2e8f0;
+    border-radius: 9px;
+    background: #fff;
+    color: #475569;
+    cursor: pointer;
+}
+
+.parkflow-page-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.parkflow-page-heading span {
+    color: #94a3b8;
+    font-size: 7px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+}
+
+.parkflow-page-heading strong {
+    color: #172033;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.parkflow-navbar-right {
+    gap: 14px;
+}
+
+.parkflow-system-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #64748b;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.parkflow-status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.09);
+}
+
+.parkflow-navbar-divider {
+    width: 1px;
+    height: 25px;
+    background: #e2e8f0;
+}
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+
+.parkflow-sidebar-overlay {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .parkflow-sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.25s ease;
+        box-shadow: 20px 0 45px rgba(15, 23, 42, 0.2);
+    }
+
+    .parkflow-sidebar.open {
+        transform: translateX(0);
+    }
+
+    .parkflow-sidebar-close {
+        display: flex;
+    }
+
+    .parkflow-sidebar-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 1050;
+        display: block;
+        visibility: hidden;
+        opacity: 0;
+        background: rgba(15, 23, 42, 0.5);
+        backdrop-filter: blur(2px);
+        transition: 0.2s ease;
+    }
+
+    .parkflow-sidebar-overlay.show {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .parkflow-content-area {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .parkflow-mobile-toggle {
+        display: flex;
+    }
+
+    body.sidebar-open {
+        overflow: hidden;
+    }
+
+    .parkflow-navbar-inner {
+        padding: 0 20px;
+    }
+
+    .parkflow-system-status,
+    .parkflow-navbar-divider {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .parkflow-navbar {
+        height: 64px;
+    }
+
+    .parkflow-navbar-inner {
+        padding: 0 15px;
+    }
+
+    .parkflow-page-heading strong {
+        font-size: 12px;
+    }
+
+    .parkflow-user-info {
+        display: none;
+    }
+
+    .parkflow-user {
+        padding-left: 0;
+    }
+
+    .parkflow-main {
+        padding: 18px 14px;
+    }
+}

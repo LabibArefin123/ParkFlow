@@ -1,0 +1,52 @@
+/* =========================================================
+   ParkFlow Notifications Animation & Responsive
+   ========================================================= */
+
+.swal2-popup.parkflow-toast {
+    animation: parkflowToastIn 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes parkflowToastIn {
+    from {
+        opacity: 0;
+        transform: translate3d(35px, -8px, 0) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+}
+
+@media (max-width: 480px) {
+    .swal2-container.swal2-top-end {
+        top: 12px !important;
+        right: 12px !important;
+        left: 12px !important;
+    }
+
+    .parkflow-toast {
+        width: 100% !important;
+        max-width: none !important;
+    }
+
+    .parkflow-toast-body {
+        min-height: 72px;
+        padding: 14px 15px;
+    }
+
+    .parkflow-toast-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 11px;
+        font-size: 14px;
+    }
+
+    .parkflow-toast-title {
+        font-size: 11.5px;
+    }
+
+    .parkflow-toast-message {
+        font-size: 10px;
+    }
+}

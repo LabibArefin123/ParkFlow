@@ -239,6 +239,18 @@
     <div class="parkflow-sidebar-footer">
 
         @if ($user)
+            <a href="{{ route('profile.index') }}"
+                class="parkflow-sidebar-link {{ request()->routeIs('profile.*') ? 'active' : '' }}">
+
+                <span class="parkflow-sidebar-icon">
+                    <i class="fa-solid fa-user-circle"></i>
+                </span>
+
+                <span class="parkflow-sidebar-label">
+                    My Profile
+                </span>
+
+            </a>
             <div class="parkflow-sidebar-user">
 
                 <div class="parkflow-sidebar-avatar">
@@ -253,11 +265,6 @@
                 <span class="parkflow-online-dot"></span>
 
             </div>
-            <a href="{{ route('profile.index') }}"
-                class="parkflow-sidebar-link {{ request()->routeIs('profile.*') ? 'active' : '' }}">
-                <i class="fa-solid fa-user-circle"></i>
-                <span>My Profile</span>
-            </a>
 
             <form method="POST" action="{{ route('logout') }}">
                 @csrf

@@ -2,161 +2,197 @@
    ParkFlow Global Footer
    ========================================================= */
 
-.parkflow-footer{
-    position:relative;
-    width:100%;
-    max-width:1500px;
-    margin:0 auto;
-    padding:15px 0 14px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:18px;
-    color:#64748b;
-    font-size:12px;
-    font-weight:500;
-    line-height:1.4;
-    letter-spacing:.01em;
-    border-top:1px solid rgba(148,163,184,.16);
+.parkflow-footer {
+    position: relative;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 16px 30px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    border-top: 1px solid rgba(148, 163, 184, 0.16);
 }
 
-/* Soft premium glow above footer */
-.parkflow-footer::before{
-    content:"";
-    position:absolute;
-    top:-1px;
-    left:10%;
-    right:10%;
-    height:1px;
-    background:linear-gradient(
+/* =========================================================
+   Footer Top Accent
+   ========================================================= */
+
+.parkflow-footer::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 8%;
+    right: 8%;
+    height: 1px;
+    background: linear-gradient(
         90deg,
         transparent,
-        rgba(37,99,235,.15),
-        rgba(59,130,246,.25),
-        rgba(37,99,235,.15),
+        rgba(37, 99, 235, 0.12),
+        rgba(59, 130, 246, 0.24),
+        rgba(37, 99, 235, 0.12),
         transparent
     );
 }
 
-/* Subtle footer background */
-.parkflow-footer::after{
-    content:"";
-    position:absolute;
-    z-index:-1;
-    top:0;
-    left:-15px;
-    right:-15px;
-    bottom:0;
-    background:linear-gradient(
+/* =========================================================
+   Footer Background
+   ========================================================= */
+
+.parkflow-footer::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
         180deg,
-        rgba(248,250,252,.35),
-        rgba(255,255,255,0)
+        rgba(248, 250, 252, 0.4),
+        rgba(255, 255, 255, 0)
     );
-    pointer-events:none;
+    pointer-events: none;
 }
+
+/* =========================================================
+   Footer Sections
+   ========================================================= */
 
 .parkflow-footer-left,
-.parkflow-footer-right{
-    display:flex;
-    align-items:center;
-    min-width:0;
+.parkflow-footer-right {
+    display: flex;
+    align-items: center;
+    min-width: 0;
 }
 
-/* Left section */
-.parkflow-footer-left{
-    color:#64748b;
-    white-space:nowrap;
+/* Left */
+
+.parkflow-footer-left {
+    flex: 1;
+    color: #64748b;
 }
 
-/* Right section */
-.parkflow-footer-right{
-    gap:5px;
-    color:#94a3b8;
-    white-space:nowrap;
+/* Right */
+
+.parkflow-footer-right {
+    flex-shrink: 0;
+    gap: 6px;
+    color: #94a3b8;
 }
 
-.parkflow-footer-right::before{
-    content:"";
-    width:1px;
-    height:12px;
-    margin-right:9px;
-    background:rgba(148,163,184,.28);
+/* Divider */
+
+.parkflow-footer-right::before {
+    content: "";
+    width: 1px;
+    height: 13px;
+    margin-right: 10px;
+    flex-shrink: 0;
+    background: rgba(148, 163, 184, 0.28);
 }
 
-/* Developer link */
-.parkflow-footer a{
-    position:relative;
-    display:inline-flex;
-    align-items:center;
-    color:#334155;
-    font-weight:650;
-    text-decoration:none;
-    transition:color .2s ease,transform .2s ease;
+/* =========================================================
+   Developer Link
+   ========================================================= */
+
+.parkflow-footer a {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    color: #334155;
+    font-weight: 650;
+    text-decoration: none;
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
 }
 
-/* Animated underline */
-.parkflow-footer a::after{
-    content:"";
-    position:absolute;
-    left:0;
-    bottom:-3px;
-    width:100%;
-    height:1px;
-    border-radius:999px;
-    background:linear-gradient(
+.parkflow-footer a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    border-radius: 999px;
+    background: linear-gradient(
         90deg,
         #2563eb,
         #60a5fa
     );
-    transform:scaleX(0);
-    transform-origin:right;
-    transition:transform .25s ease;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.25s ease;
 }
 
-.parkflow-footer a:hover{
-    color:#2563eb;
-    transform:translateY(-1px);
+.parkflow-footer a:hover {
+    color: #2563eb;
+    transform: translateY(-1px);
 }
 
-.parkflow-footer a:hover::after{
-    transform:scaleX(1);
-    transform-origin:left;
+.parkflow-footer a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 /* =========================================================
-   Responsive
+   Tablet
    ========================================================= */
 
-@media(max-width:767.98px){
-    .parkflow-footer{
-        flex-direction:column;
-        justify-content:center;
-        gap:5px;
-        padding:13px 10px;
-        text-align:center;
-    }
-
-    .parkflow-footer-left,
-    .parkflow-footer-right{
-        justify-content:center;
-        white-space:normal;
-    }
-
-    .parkflow-footer-left::before,
-    .parkflow-footer-right::before{
-        display:none;
+@media (max-width: 900px) {
+    .parkflow-footer {
+        padding-right: 20px;
+        padding-left: 20px;
     }
 }
 
-@media(max-width:480px){
-    .parkflow-footer{
-        padding:12px 8px;
-        font-size:11px;
-        gap:4px;
+/* =========================================================
+   Mobile
+   ========================================================= */
+
+@media (max-width: 768px) {
+    .parkflow-footer {
+        flex-direction: column;
+        justify-content: center;
+        gap: 6px;
+        padding: 14px 16px;
+        text-align: center;
     }
 
     .parkflow-footer-left,
-    .parkflow-footer-right{
-        line-height:1.5;
+    .parkflow-footer-right {
+        justify-content: center;
+        width: 100%;
+        white-space: normal;
+        text-align: center;
+    }
+
+    .parkflow-footer-right::before {
+        display: none;
+    }
+}
+
+/* =========================================================
+   Small Mobile
+   ========================================================= */
+
+@media (max-width: 480px) {
+    .parkflow-footer {
+        gap: 4px;
+        padding: 12px 10px;
+        font-size: 11px;
+    }
+
+    .parkflow-footer-left,
+    .parkflow-footer-right {
+        line-height: 1.5;
     }
 }

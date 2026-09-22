@@ -1,0 +1,81 @@
+/* =========================================================
+   ParkFlow Sidebar Menu
+   ========================================================= */
+
+.parkflow-sidebar-link {
+    position: relative;
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 0 9px;
+    margin: 3px 0;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    color: #94a3b8;
+    transition: 0.2s ease;
+}
+
+.parkflow-sidebar-link:hover {
+    color: #e2e8f0;
+    background: rgba(255, 255, 255, 0.045);
+}
+
+.parkflow-sidebar-link.active {
+    color: #fff;
+    background: linear-gradient(
+        90deg,
+        rgba(37, 99, 235, 0.19),
+        rgba(37, 99, 235, 0.06)
+    );
+    border-color: rgba(59, 130, 246, 0.16);
+}
+
+.parkflow-sidebar-link.active::before {
+    position: absolute;
+    top: 8px;
+    left: -11px;
+    bottom: 8px;
+    width: 3px;
+    border-radius: 0 5px 5px 0;
+    background: #3b82f6;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.35);
+    content: "";
+}
+
+.parkflow-sidebar-icon {
+    width: 29px;
+    height: 29px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 8px;
+    font-size: 11px;
+    transition: 0.2s ease;
+}
+
+.parkflow-sidebar-link.active .parkflow-sidebar-icon {
+    background: rgba(59, 130, 246, 0.13);
+    color: #60a5fa;
+}
+
+.parkflow-sidebar-label {
+    flex: 1;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.parkflow-sidebar-badge {
+    min-width: 21px;
+    height: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+    border-radius: 6px;
+    background: #1d4ed8;
+    color: #fff;
+    font-size: 8px;
+    font-weight: 800;
+}
