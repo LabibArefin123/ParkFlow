@@ -1,0 +1,87 @@
+.rp-form-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:22px 20px;
+    padding:24px;
+}
+
+.rp-field{
+    min-width:0;
+}
+
+.rp-field label{
+    display:block;
+    margin:0 0 8px;
+    color:#39465a;
+    font-size:12px;
+    font-weight:750;
+}
+
+.rp-field label span{
+    margin-left:2px;
+    color:#d45a5a;
+}
+
+.rp-input{
+    position:relative;
+    display:flex;
+    align-items:center;
+}
+
+.rp-input>i{
+    position:absolute;
+    left:13px;
+    z-index:1;
+    color:#8b96a7;
+    font-size:12px;
+    pointer-events:none;
+}
+
+.rp-input input{
+    width:100%;
+    height:43px;
+    padding:0 42px 0 36px;
+    border:1px solid #dfe5ed;
+    border-radius:9px;
+    outline:none;
+    background:#fff;
+    color:#263247;
+    font-size:12px;
+    transition:all .2s ease;
+}
+
+.rp-input input:focus{
+    border-color:#9eabba;
+    box-shadow:0 0 0 3px rgba(100,116,139,.08);
+}
+
+.rp-field small{
+    display:block;
+    margin-top:6px;
+    color:#909bab;
+    font-size:10px;
+    line-height:1.5;
+}
+
+.rp-password-toggle{
+    position:absolute;
+    top:50%;
+    right:7px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:30px;
+    height:30px;
+    padding:0;
+    border:0;
+    border-radius:7px;
+    background:transparent;
+    color:#8b96a7;
+    cursor:pointer;
+    transform:translateY(-50%);
+}
+
+.rp-password-toggle:hover{
+    background:#f3f5f8;
+    color:#536176;
+}

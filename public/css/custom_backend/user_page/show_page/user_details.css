@@ -1,0 +1,40 @@
+.rp-details-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:15px;
+}
+
+.rp-detail-item{
+    padding:15px;
+    border:1px solid #e8ecf1;
+    border-radius:10px;
+    background:#fff;
+}
+
+.rp-detail-label{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    margin-bottom:7px;
+    color:#8a95a5;
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+}
+
+.rp-detail-label i{
+    color:#7c899c;
+    font-size:10px;
+}
+
+.rp-detail-value{
+    color:#344055;
+    font-size:13px;
+    font-weight:650;
+    word-break:break-word;
+}
+
+.rp-detail-value.email{
+    color:#536176;
+}

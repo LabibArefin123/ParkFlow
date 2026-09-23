@@ -14,6 +14,9 @@ use App\Http\Controllers\RevenueController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UserController;
 
 Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
@@ -23,11 +26,11 @@ Route::middleware('guest')->group(function () {
 Route::post('/logout', [AuthController::class, 'logout'])
     ->middleware('auth')
     ->name('logout');
-    
+
 Route::middleware('auth')->group(function () {
-    Route::get('/profile',[ProfileController::class,'index'])->name('profile.index');
-    Route::put('/profile',[ProfileController::class,'update'])->name('profile.update');
-    Route::put('/profile/password',[ProfileController::class,'updatePassword'])->name('profile.password.update');
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+    Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::put('/profile/password', [ProfileController::class, 'updatePassword'])->name('profile.password.update');
     Route::get('/dashboard', DashboardController::class)->name('dashboard');
     Route::get('/admin', [AdministrationController::class, 'index'])->name('administration');
     Route::resource('parking_locations', ParkingLocationController::class);
@@ -41,6 +44,9 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/revenue', [RevenueController::class, 'index'])->name('revenue.index');
     Route::get('/reports', [ReportController::class, 'index'])->name('reports.index');
+    Route::resource('permissions', PermissionController::class);
+    Route::resource('roles', RoleController::class);
+    Route::resource('users', UserController::class);
 });
 
 Route::get('/', function () {

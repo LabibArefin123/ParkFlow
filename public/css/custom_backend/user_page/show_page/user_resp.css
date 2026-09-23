@@ -1,0 +1,40 @@
+@media(max-width:768px){
+
+    .rp-header{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+    .rp-header-actions{
+        width:100%;
+    }
+
+    .rp-header-actions a{
+        flex:1;
+    }
+
+    .rp-profile-top{
+        align-items:flex-start;
+        flex-direction:column;
+        padding:20px;
+    }
+
+    .rp-profile-body{
+        padding:18px;
+    }
+
+    .rp-details-grid{
+        grid-template-columns:1fr;
+    }
+
+    .rp-actions-panel{
+        align-items:stretch;
+        flex-direction:column;
+    }
+
+    .rp-actions-panel a,
+    .rp-actions-panel button{
+        width:100%;
+    }
+
+}

@@ -1,0 +1,47 @@
+@media(max-width:900px){
+
+    .rp-form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .rp-role-options{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .rp-header{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+    .rp-form-header{
+        padding:18px;
+    }
+
+    .rp-form-grid{
+        padding:20px 18px;
+    }
+
+    .rp-error{
+        margin:18px;
+    }
+
+    .rp-user-role-section{
+        margin:0 18px 20px;
+    }
+
+    .rp-form-footer{
+        align-items:stretch;
+        flex-direction:column-reverse;
+        padding:17px 18px;
+    }
+
+    .rp-form-footer .rp-primary-btn,
+    .rp-form-footer .rp-secondary-btn{
+        width:100%;
+    }
+
+}

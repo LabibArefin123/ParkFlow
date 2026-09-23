@@ -1,0 +1,15 @@
+.rp-form-footer .rp-secondary-btn {
+    min-height: 41px;
+}
+
+.rp-form-footer .rp-primary-btn {
+    min-height: 41px;
+}
+
+.rp-form-footer .rp-primary-btn i {
+    font-size: 12px;
+}
+
+.rp-form-footer .rp-secondary-btn {
+    padding: 0 17px;
+}
