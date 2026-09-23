@@ -1,0 +1,18 @@
+.rp-form-footer{
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    gap:10px;
+    padding:18px 24px;
+    border-top:1px solid #edf0f4;
+    background:#fcfdff;
+}
+
+.rp-form-footer .rp-primary-btn,
+.rp-form-footer .rp-secondary-btn{
+    min-width:115px;
+}
+
+.rp-form-footer .rp-primary-btn{
+    min-width:155px;
+}

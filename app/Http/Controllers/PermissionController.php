@@ -35,7 +35,7 @@ class PermissionController extends Controller
             'unused' => Permission::doesntHave('roles')->count(),
         ];
 
-        return view('parkflow.permissions.index', compact(
+        return view('parkflow.permission_page.index', compact(
             'user',
             'permissions',
             'stats'
@@ -46,7 +46,7 @@ class PermissionController extends Controller
     {
         $user = auth()->user();
 
-        return view('parkflow.permissions.create', compact('user'));
+        return view('parkflow.permission_page.create', compact('user'));
     }
 
     public function store(Request $request)
@@ -69,7 +69,7 @@ class PermissionController extends Controller
 
         $permission->load('roles');
 
-        return view('parkflow.permissions.show', compact(
+        return view('parkflow.permission_page.show', compact(
             'user',
             'permission'
         ));
@@ -79,7 +79,7 @@ class PermissionController extends Controller
     {
         $user = auth()->user();
 
-        return view('parkflow.permissions.edit', compact(
+        return view('parkflow.permission_page.edit', compact(
             'user',
             'permission'
         ));

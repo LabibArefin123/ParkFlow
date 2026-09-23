@@ -1,0 +1,28 @@
+.rp-form-grid{
+    position:relative;
+}
+
+.rp-form-grid:after{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:24px;
+    bottom:24px;
+    width:1px;
+    background:#edf0f4;
+    transform:translateX(-10px);
+    pointer-events:none;
+}
+
+.rp-field{
+    position:relative;
+    z-index:1;
+}
+
+.rp-field:first-child{
+    padding-right:10px;
+}
+
+.rp-field:last-child{
+    padding-left:10px;
+}

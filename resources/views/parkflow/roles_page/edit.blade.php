@@ -135,17 +135,13 @@
                     </div>
 
                     <div class="rp-permission-grid">
-
                         @php
                             $selectedPermissions = old('permissions', $role->permissions->pluck('id')->toArray());
                         @endphp
-
                         @forelse($permissions->groupBy(function ($permission) {
                                 return explode('.', $permission->name)[0];
                             }) as $group => $groupPermissions)
-
                             <div class="rp-permission-group">
-
                                 <div class="rp-permission-group-title">
 
                                     <span>
@@ -157,7 +153,6 @@
                                     <small>
                                         {{ $groupPermissions->count() }}
                                     </small>
-
                                 </div>
 
                                 @foreach ($groupPermissions as $permission)
@@ -177,38 +172,27 @@
 
                                     </label>
                                 @endforeach
-
                             </div>
-
                         @empty
-
                             <div class="rp-empty rp-empty-small">
-
                                 <div class="rp-empty-icon">
                                     <i class="fa-solid fa-key"></i>
                                 </div>
 
                                 <h3>No permissions available</h3>
 
-                                <p>
-                                    Create permissions first before updating a role.
-                                </p>
+                                <p> Create permissions first before updating a role. </p>
 
                                 <a href="{{ route('permissions.create') }}" class="rp-primary-btn">
                                     <i class="fa-solid fa-plus"></i>
                                     Add Permission
                                 </a>
-
                             </div>
-
                         @endforelse
-
                     </div>
-
                 </div>
 
                 <div class="rp-form-footer">
-
                     <a href="{{ route('roles.index') }}" class="rp-secondary-btn">
                         Cancel
                     </a>
@@ -217,13 +201,9 @@
                         <i class="fa-solid fa-floppy-disk"></i>
                         Update Role
                     </button>
-
                 </div>
-
             </form>
-
         </div>
-
     </div>
 
     @push('scripts')

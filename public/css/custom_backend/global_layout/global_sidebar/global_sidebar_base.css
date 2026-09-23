@@ -43,8 +43,8 @@
     flex-shrink: 0;
     overflow: hidden;
     border-radius: 11px;
-    background: linear-gradient(145deg, #2563eb, #0ea5e9);
-    box-shadow: 0 7px 20px rgba(37, 99, 235, 0.28);
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(30, 58, 138, 0.2);
 }
 
 .parkflow-sidebar-logo img {

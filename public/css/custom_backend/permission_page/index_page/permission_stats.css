@@ -1,0 +1,71 @@
+.rp-stat-grid{
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:16px;
+    margin-bottom:22px;
+}
+
+.rp-stat-card{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    min-height:92px;
+    padding:18px;
+    border:1px solid #e7ebf2;
+    border-radius:14px;
+    background:#fff;
+    box-shadow:0 5px 18px rgba(15,23,42,.04);
+    transition:all .2s ease;
+}
+
+.rp-stat-card:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 25px rgba(15,23,42,.07);
+}
+
+.rp-stat-icon{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:48px;
+    height:48px;
+    flex:0 0 48px;
+    border-radius:12px;
+    font-size:18px;
+}
+
+.rp-stat-icon.blue{
+    background:#eef5ff;
+    color:#3977d8;
+}
+
+.rp-stat-icon.green{
+    background:#edf9f2;
+    color:#2e9d61;
+}
+
+.rp-stat-icon.purple{
+    background:#f5efff;
+    color:#8055c7;
+}
+
+.rp-stat-icon.amber{
+    background:#fff7e8;
+    color:#d58a16;
+}
+
+.rp-stat-card span{
+    display:block;
+    margin-bottom:4px;
+    color:#7b8798;
+    font-size:12px;
+    font-weight:600;
+}
+
+.rp-stat-card strong{
+    display:block;
+    color:#172033;
+    font-size:23px;
+    line-height:1.2;
+    font-weight:800;
+}
