@@ -277,7 +277,7 @@
     <div class="parkflow-sidebar-footer">
 
         @if ($user)
-            <a href="{{ route('profile.index') }}"
+            <a href="{{ route('profile.show') }}"
                 class="parkflow-sidebar-link {{ request()->routeIs('profile.*') ? 'active' : '' }}">
 
                 <span class="parkflow-sidebar-icon">

@@ -10,7 +10,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             // ParkFlowSeeder::class,
-            UserSeeder::class,
+            PermissionSeeder::class,
+            // UserSeeder::class,
         ]);
     }
 }

@@ -45,7 +45,7 @@ class UserController extends Controller
             'roles' => Role::count(),
         ];
 
-        return view('user_page.index', compact(
+        return view('parkflow.user_page.index', compact(
             'user',
             'users',
             'roles',
@@ -59,7 +59,7 @@ class UserController extends Controller
 
         $roles = Role::orderBy('name')->get();
 
-        return view('user_page.create', compact(
+        return view('parkflow.user_page.create', compact(
             'user',
             'roles'
         ));
@@ -95,7 +95,7 @@ class UserController extends Controller
 
         $user->load('roles', 'permissions');
 
-        return view('user_page.show', compact(
+        return view('parkflow.user_page.show', compact(
             'authUser',
             'user'
         ));
@@ -111,7 +111,7 @@ class UserController extends Controller
 
         $selectedRole = $user->roles->first()?->name;
 
-        return view('user_page.edit', compact(
+        return view('parkflow.user_page.edit', compact(
             'authUser',
             'user',
             'roles',

@@ -14,7 +14,6 @@
     flex-shrink: 0;
     overflow: hidden;
     border-radius: 13px;
-    background: linear-gradient(135deg, #0f172a, #1e3a8a);
     color: #fff;
     box-shadow: 0 8px 20px rgba(30, 58, 138, 0.2);
 }

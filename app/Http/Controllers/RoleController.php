@@ -36,7 +36,7 @@ class RoleController extends Controller
             'permissions' => Permission::count(),
         ];
 
-        return view('parkflow.roles.index', compact(
+        return view('parkflow.roles_page.index', compact(
             'user',
             'roles',
             'stats'
@@ -49,7 +49,7 @@ class RoleController extends Controller
 
         $permissions = Permission::orderBy('name')->get();
 
-        return view('parkflow.roles.create', compact(
+        return view('parkflow.roles_page.create', compact(
             'user',
             'permissions'
         ));
@@ -84,11 +84,17 @@ class RoleController extends Controller
     {
         $user = auth()->user();
 
-        $role->load('permissions', 'users');
+        $permissions = Permission::orderBy('name')->get();
 
-        return view('parkflow.roles.show', compact(
+        $role->load([
+            'permissions',
+            'users',
+        ]);
+
+        return view('parkflow.roles_page.show', compact(
             'user',
-            'role'
+            'role',
+            'permissions'
         ));
     }
 
@@ -104,7 +110,7 @@ class RoleController extends Controller
             ->pluck('id')
             ->toArray();
 
-        return view('parkflow.roles.edit', compact(
+        return view('parkflow.roles_page.edit', compact(
             'user',
             'role',
             'permissions',

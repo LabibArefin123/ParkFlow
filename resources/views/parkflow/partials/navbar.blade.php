@@ -21,7 +21,7 @@
 
             <div class="parkflow-navbar-divider"></div>
             @if ($user)
-                <a href="{{ route('profile.index') }}" class="parkflow-user">
+                <a href="{{ route('profile.show') }}" class="parkflow-user">
 
                     <div class="parkflow-user-avatar">
                         {{ strtoupper(substr($user->name ?? 'U', 0, 1)) }}
