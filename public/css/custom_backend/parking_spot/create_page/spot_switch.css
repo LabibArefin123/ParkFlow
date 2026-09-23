@@ -1,0 +1,60 @@
+.spot-switch-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    min-height:45px;
+    padding:0 13px;
+    border:1px solid #dfe4eb;
+    border-radius:10px;
+    background:#fff;
+}
+
+.spot-switch-text{
+    color:#344054;
+    font-size:12px;
+    font-weight:700;
+}
+
+.spot-switch{
+    position:relative;
+    width:45px;
+    height:24px;
+    flex-shrink:0;
+}
+
+.spot-switch input{
+    width:0;
+    height:0;
+    opacity:0;
+}
+
+.spot-slider{
+    position:absolute;
+    inset:0;
+    cursor:pointer;
+    border-radius:30px;
+    background:#cbd5e1;
+    transition:.2s ease;
+}
+
+.spot-slider:before{
+    content:"";
+    position:absolute;
+    width:18px;
+    height:18px;
+    left:3px;
+    top:3px;
+    border-radius:50%;
+    background:#fff;
+    box-shadow:0 1px 3px rgba(0,0,0,.2);
+    transition:.2s ease;
+}
+
+.spot-switch input:checked+.spot-slider{
+    background:#f59e0b;
+}
+
+.spot-switch input:checked+.spot-slider:before{
+    transform:translateX(21px);
+}

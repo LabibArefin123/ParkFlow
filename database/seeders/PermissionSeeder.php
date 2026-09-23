@@ -22,9 +22,12 @@ class PermissionSeeder extends Seeder
             'administration',
 
             /*Parking Locations Part */
+            'parking_locations.index',
             'parking_locations.show',
             'parking_locations.create',
+            'parking_locations.store',
             'parking_locations.edit',
+            'parking_locations.update',
             'parking_locations.destroy',
 
             /*Parking Spots Part  */
@@ -76,9 +79,12 @@ class PermissionSeeder extends Seeder
             'reports.index',
 
             /* Permissions Part */
+            'permissions.index',
             'permissions.show',
             'permissions.create',
+            'permissions.store',
             'permissions.edit',
+            'permissions.update',
             'permissions.destroy',
 
             /*Roles Part */

@@ -1,0 +1,17 @@
+@media (max-width: 700px) {
+    .spot-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .spot-form-group.full {
+        grid-column: auto;
+    }
+
+    .show-spot-form {
+        padding: 18px;
+    }
+
+    .show-spot-footer {
+        padding: 16px 18px;
+    }
+}

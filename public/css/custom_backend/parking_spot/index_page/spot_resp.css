@@ -1,0 +1,33 @@
+@media(max-width:1000px){
+
+    .spot-stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .spot-card-header{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+    .spot-filter{
+        width:100%;
+    }
+
+}
+
+@media(max-width:700px){
+
+    .spot-header{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+    .spot-add-btn{
+        width:100%;
+    }
+
+    .spot-stats{
+        grid-template-columns:1fr;
+    }
+
+}

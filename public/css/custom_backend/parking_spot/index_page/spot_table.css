@@ -1,0 +1,181 @@
+.spot-table-wrapper {
+    overflow-x: auto;
+}
+
+.spot-table {
+    width: 100%;
+    min-width: 950px;
+    border-collapse: collapse;
+}
+
+.spot-table th {
+    padding: 13px 20px;
+    background: #fafbfc;
+    color: #7b8496;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-align: left;
+    text-transform: uppercase;
+    border-bottom: 1px solid #edf0f4;
+}
+
+.spot-table td {
+    padding: 15px 20px;
+    color: #475569;
+    font-size: 12px;
+    border-bottom: 1px solid #f0f2f5;
+    vertical-align: middle;
+}
+
+.spot-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.spot-table tbody tr:hover {
+    background: #fffdf7;
+}
+
+.spot-number {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.spot-icon {
+    width: 39px;
+    height: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #f8fafc;
+    color: #475569;
+}
+
+.spot-number strong {
+    display: block;
+    color: #172033;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.spot-number small {
+    display: block;
+    margin-top: 3px;
+    color: #98a1b1;
+    font-size: 10px;
+}
+
+.spot-location {
+    display: flex;
+    flex-direction: column;
+}
+
+.spot-location strong {
+    color: #344054;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.spot-location small {
+    margin-top: 3px;
+    color: #98a1b1;
+    font-size: 10px;
+}
+
+.spot-type {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 9px;
+    border-radius: 8px;
+    background: #f8fafc;
+    color: #475569;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.spot-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: capitalize;
+}
+
+.spot-status.available {
+    background: #ecfdf5;
+    color: #047857;
+}
+
+.spot-status.occupied {
+    background: #fff7ed;
+    color: #c2410c;
+}
+
+.spot-status.reserved {
+    background: #eff6ff;
+    color: #1d4ed8;
+}
+
+.spot-status.maintenance {
+    background: #fef2f2;
+    color: #b91c1c;
+}
+
+.spot-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.spot-active {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #047857;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.spot-inactive {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #b91c1c;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.spot-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 7px;
+}
+
+.spot-action {
+    width: 33px;
+    height: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e5e9ef;
+    border-radius: 8px;
+    background: #fff;
+    color: #64748b;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.spot-action:hover {
+    color: #d97706;
+    border-color: #f5c76b;
+    background: #fffbeb;
+}

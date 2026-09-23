@@ -89,6 +89,89 @@ class ParkingSpotController extends Controller
             ->with('success', 'Parking spot created successfully.');
     }
 
+    public function show(ParkingSpot $parkingSpot)
+    {
+        $user = auth()->user();
+
+        $parkingSpot->load('parkingLocation');
+
+        return view('parkflow.parking_spots.show', compact(
+            'user',
+            'parkingSpot'
+        ));
+    }
+
+    public function edit(ParkingSpot $parkingSpot)
+    {
+        $user = auth()->user();
+
+        $parkingLocations = ParkingLocation::where('is_active', true)
+            ->orderBy('name')
+            ->get();
+
+        if (
+            !$parkingLocations->contains('id', $parkingSpot->parking_location_id)
+            && $parkingSpot->parkingLocation
+        ) {
+            $parkingLocations->prepend($parkingSpot->parkingLocation);
+        }
+
+        return view('parkflow.parking_spots.edit', compact(
+            'user',
+            'parkingSpot',
+            'parkingLocations'
+        ));
+    }
+
+    public function update(Request $request, ParkingSpot $parkingSpot)
+    {
+        $validated = $request->validate([
+            'parking_location_id' => 'required|exists:parking_locations,id',
+            'floor' => 'required|string|max:100',
+            'spot_number' => 'required|string|max:50',
+            'vehicle_type' => 'required|in:car,motorcycle,microbus,cng',
+            'status' => 'required|in:available,occupied,reserved,maintenance',
+            'is_active' => 'nullable|boolean',
+        ]);
+
+        $exists = ParkingSpot::where('parking_location_id', $validated['parking_location_id'])
+            ->where('spot_number', $validated['spot_number'])
+            ->where('id', '!=', $parkingSpot->id)
+            ->exists();
+
+        if ($exists) {
+            return back()
+                ->withInput()
+                ->withErrors([
+                    'spot_number' => 'This parking spot already exists in the selected location.'
+                ]);
+        }
+
+        $oldLocation = $parkingSpot->parkingLocation;
+
+        $validated['is_active'] = $request->boolean('is_active');
+
+        $parkingSpot->update($validated);
+
+        $newLocation = ParkingLocation::find($validated['parking_location_id']);
+
+        if ($oldLocation) {
+            $oldLocation->update([
+                'total_spots' => $oldLocation->parkingSpots()->count(),
+            ]);
+        }
+
+        if ($newLocation && (!$oldLocation || $oldLocation->id !== $newLocation->id)) {
+            $newLocation->update([
+                'total_spots' => $newLocation->parkingSpots()->count(),
+            ]);
+        }
+
+        return redirect()
+            ->route('parking_spots.index')
+            ->with('success', 'Parking spot updated successfully.');
+    }
+
     public function destroy(ParkingSpot $parkingSpot)
     {
         $location = $parkingSpot->parkingLocation;

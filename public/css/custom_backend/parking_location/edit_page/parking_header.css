@@ -1,0 +1,44 @@
+.edit-location-page{
+    max-width:100%;
+    margin:0 auto;
+}
+
+.edit-location-header{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.back-location-btn{
+    width:40px;
+    height:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid #e5e9ef;
+    border-radius:10px;
+    background:#fff;
+    color:#64748b;
+    transition:.2s ease;
+}
+
+.back-location-btn:hover{
+    color:#d97706;
+    border-color:#f5c76b;
+    background:#fffbeb;
+}
+
+.edit-location-header h1{
+    margin:0;
+    color:#172033;
+    font-size:27px;
+    font-weight:800;
+    letter-spacing:-.6px;
+}
+
+.edit-location-header p{
+    margin:5px 0 0;
+    color:#8992a3;
+    font-size:13px;
+}

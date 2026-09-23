@@ -150,11 +150,11 @@
 
                                     <td>
                                         <div class="location-actions-cell">
-                                            <a href="#" class="location-action" title="View">
+                                            <a href="{{ route('parking_locations.show', $location) }}" class="location-action" title="View">
                                                 <i class="fa-solid fa-eye"></i>
                                             </a>
 
-                                            <a href="#" class="location-action" title="Edit">
+                                            <a href="{{ route('parking_locations.edit', $location) }}" class="location-action" title="Edit">
                                                 <i class="fa-solid fa-pen"></i>
                                             </a>
 

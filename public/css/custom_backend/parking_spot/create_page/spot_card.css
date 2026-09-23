@@ -1,0 +1,25 @@
+.create-spot-card {
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #e8ebf1;
+    border-radius: 17px;
+    box-shadow: 0 5px 20px rgba(15, 23, 42, 0.035);
+}
+
+.create-spot-card-header {
+    padding: 21px 25px;
+    border-bottom: 1px solid #edf0f4;
+}
+
+.create-spot-card-header h2 {
+    margin: 0;
+    color: #172033;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.create-spot-card-header p {
+    margin: 5px 0 0;
+    color: #8992a3;
+    font-size: 12px;
+}

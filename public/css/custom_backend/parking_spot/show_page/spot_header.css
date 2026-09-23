@@ -1,16 +1,16 @@
-.create-location-page {
+.show-spot-page {
     max-width: 100%;
     margin: 0 auto;
 }
 
-.create-location-header {
+.show-spot-header {
     display: flex;
     align-items: center;
     gap: 15px;
     margin-bottom: 25px;
 }
 
-.back-location-btn {
+.spot-back {
     width: 40px;
     height: 40px;
     display: flex;
@@ -23,13 +23,13 @@
     transition: 0.2s ease;
 }
 
-.back-location-btn:hover {
+.spot-back:hover {
     color: #d97706;
     border-color: #f5c76b;
     background: #fffbeb;
 }
 
-.create-location-header h1 {
+.show-spot-header h1 {
     margin: 0;
     color: #172033;
     font-size: 27px;
@@ -37,7 +37,7 @@
     letter-spacing: -0.6px;
 }
 
-.create-location-header p {
+.show-spot-header p {
     margin: 5px 0 0;
     color: #8992a3;
     font-size: 13px;
