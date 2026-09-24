@@ -6,38 +6,30 @@
 
       <div class="panel-body">
           <div class="session-list">
-
-              @foreach ($activeSessions as $session)
+              @forelse ($activeSessions as $session)
                   <div class="session-item">
-
                       <div class="vehicle-icon">
-                          @if ($session['type'] === 'Motorcycle')
+                          @if ($session->vehicle?->type === 'Motorcycle')
                               <i class="fas fa-motorcycle"></i>
-                          @elseif($session['type'] === 'Microbus')
+                          @elseif ($session->vehicle?->type === 'Microbus')
                               <i class="fas fa-bus"></i>
                           @else
                               <i class="fas fa-car"></i>
                           @endif
                       </div>
-
                       <div class="session-info">
-                          <div class="vehicle-number">
-                              {{ $session['vehicle'] }}
-                          </div>
-
-                          <div class="session-meta">
-                              {{ $session['spot'] }} · {{ $session['entry_time'] }}
-                          </div>
+                          <div class="vehicle-number"> {{ $session->vehicle?->registration_number ?? 'N/A' }} </div>
+                          <div class="session-meta"> {{ $session->parkingSpot?->spot_number ?? 'N/A' }} ·
+                              {{ $session->entry_time?->format('h:i A') ?? 'N/A' }} </div>
                       </div>
-
-                      <div class="session-duration">
-                          {{ $session['duration'] }}
-                          <small>{{ $session['type'] }}</small>
-                      </div>
-
+                      <div class="session-duration"> {{ $session->duration ?? '0m' }} <small>
+                              {{ $session->vehicle?->type ?? 'Vehicle' }} </small> </div>
+              </div> @empty <div class="session-empty">
+                      <div class="session-empty-icon"> <i class="fas fa-parking"></i> </div>
+                      <div class="session-empty-title"> No Active Sessions </div>
+                      <div class="session-empty-text"> There are currently no vehicles parked. </div>
                   </div>
-              @endforeach
-
+              @endforelse
           </div>
       </div>
   </div>

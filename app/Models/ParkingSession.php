@@ -31,6 +31,20 @@ class ParkingSession extends Model
         'total_amount' => 'decimal:2',
     ];
 
+    public function getDurationAttribute()
+    {
+        if (!$this->entry_time) {
+            return null;
+        }
+        $minutes = $this->entry_time->diffInMinutes(now());
+        $hours = intdiv($minutes, 60);
+        $remainingMinutes = $minutes % 60;
+        if ($hours > 0) {
+            return "{$hours}h {$remainingMinutes}m";
+        }
+        return "{$remainingMinutes}m";
+    }
+
     public function parkingSpot()
     {
         return $this->belongsTo(ParkingSpot::class);

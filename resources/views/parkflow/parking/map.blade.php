@@ -98,9 +98,7 @@
         </div>
 
         <div class="parking-map-card">
-
             <div class="parking-map-toolbar">
-
                 <div class="parking-map-toolbar-left">
                     <div>
                         <div class="map-section-title">Parking Overview</div>
