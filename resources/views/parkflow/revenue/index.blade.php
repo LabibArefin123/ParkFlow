@@ -12,11 +12,8 @@
     <link rel="stylesheet" href="{{ asset('css/custom_backend/revenue_page/revenue_paginate.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom_backend/revenue_page/revenue_footer_responsive.css') }}">
     <div class="revenue-page">
-
         <div class="revenue-header">
-
             <div class="revenue-title">
-
                 <div class="revenue-title-icon">
                     <i class="fa-solid fa-chart-line"></i>
                 </div>
@@ -25,20 +22,16 @@
                     <h1>Revenue</h1>
                     <p>Track parking payments and monitor your business revenue.</p>
                 </div>
-
             </div>
 
             <a href="{{ route('parking_sessions.index') }}" class="revenue-action">
                 <i class="fa-solid fa-clock-rotate-left"></i>
                 View Parking Sessions
             </a>
-
         </div>
 
         <div class="revenue-stats">
-
             <div class="revenue-stat">
-
                 <div class="revenue-stat-top">
                     <span class="revenue-stat-label">Total Revenue</span>
 
@@ -47,18 +40,11 @@
                     </div>
                 </div>
 
-                <div class="revenue-stat-value">
-                    ৳{{ number_format($totalRevenue, 2) }}
-                </div>
-
-                <div class="revenue-stat-meta">
-                    All paid parking transactions
-                </div>
-
+                <div class="revenue-stat-value">৳{{ number_format($totalRevenue, 2) }}</div>
+                <div class="revenue-stat-meta">All paid parking transactions</div>
             </div>
 
             <div class="revenue-stat today">
-
                 <div class="revenue-stat-top">
                     <span class="revenue-stat-label">Today's Revenue</span>
 
@@ -67,18 +53,11 @@
                     </div>
                 </div>
 
-                <div class="revenue-stat-value">
-                    ৳{{ number_format($todayRevenue, 2) }}
-                </div>
-
-                <div class="revenue-stat-meta">
-                    Collected today
-                </div>
-
+                <div class="revenue-stat-value">৳{{ number_format($todayRevenue, 2) }}</div>
+                <div class="revenue-stat-meta">Collected today</div>
             </div>
 
             <div class="revenue-stat month">
-
                 <div class="revenue-stat-top">
                     <span class="revenue-stat-label">This Month</span>
 
@@ -87,14 +66,8 @@
                     </div>
                 </div>
 
-                <div class="revenue-stat-value">
-                    ৳{{ number_format($monthlyRevenue, 2) }}
-                </div>
-
-                <div class="revenue-stat-meta">
-                    {{ now()->format('F Y') }}
-                </div>
-
+                <div class="revenue-stat-value">৳{{ number_format($monthlyRevenue, 2) }}</div>
+                <div class="revenue-stat-meta">{{ now()->format('F Y') }}</div>
             </div>
 
             <div class="revenue-stat transactions">
