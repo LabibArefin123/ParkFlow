@@ -3,7 +3,6 @@
 @section('title', 'Revenue')
 
 @section('content')
-    <link rel="stylesheet" href="{{ asset('css/custom_backend/revenue_page/revenue_base.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom_backend/revenue_page/revenue_header.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom_backend/revenue_page/revenue_stats.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom_backend/revenue_page/revenue_toolbar.css') }}">

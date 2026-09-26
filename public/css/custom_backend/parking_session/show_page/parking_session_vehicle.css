@@ -1,0 +1,112 @@
+.session-vehicle-card {
+    padding: 27px;
+    overflow: hidden;
+    position: relative;
+}
+
+.vehicle-card-top {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.vehicle-main-icon {
+    width: 68px;
+    height: 68px;
+    flex: 0 0 68px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 17px;
+    background: #f3f6fa;
+    color: #26364d;
+    font-size: 27px;
+}
+
+.vehicle-main-info {
+    flex: 1;
+}
+
+.vehicle-label {
+    display: block;
+    margin-bottom: 4px;
+    color: #9aa2ae;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+}
+
+.vehicle-main-info h2 {
+    margin: 0 0 5px;
+    color: #172033;
+    font-size: 23px;
+    font-weight: 750;
+    letter-spacing: 0.2px;
+}
+
+.vehicle-type {
+    color: #7e8795;
+    font-size: 13px;
+}
+
+.vehicle-session-number {
+    text-align: right;
+}
+
+.vehicle-session-number span {
+    display: block;
+    color: #a0a7b2;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.vehicle-session-number strong {
+    color: #536174;
+    font-size: 15px;
+}
+
+.vehicle-card-divider {
+    height: 1px;
+    margin: 25px 0;
+    background: #edf0f3;
+}
+
+.vehicle-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.summary-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.summary-icon {
+    width: 39px;
+    height: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #f6f7f9;
+    color: #647286;
+    font-size: 13px;
+}
+
+.summary-item span:not(.summary-icon) {
+    display: block;
+    color: #9aa2ae;
+    font-size: 11px;
+    margin-bottom: 3px;
+}
+
+.summary-item strong {
+    display: block;
+    color: #273449;
+    font-size: 13px;
+    font-weight: 700;
+}

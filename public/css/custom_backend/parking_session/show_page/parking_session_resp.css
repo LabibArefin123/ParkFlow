@@ -1,0 +1,121 @@
+@media (max-width: 1100px) {
+    .session-show-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .session-side-column {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .session-actions-card {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .session-show-page {
+        padding: 20px 16px 35px;
+    }
+
+    .session-show-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .session-show-heading h1 {
+        font-size: 23px;
+    }
+
+    .session-vehicle-card {
+        padding: 21px;
+    }
+
+    .vehicle-card-top {
+        align-items: flex-start;
+    }
+
+    .vehicle-session-number {
+        display: none;
+    }
+
+    .vehicle-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .session-timeline {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .timeline-item {
+        width: 100%;
+    }
+
+    .timeline-line {
+        width: 1px;
+        height: 25px;
+        margin: -5px 0 -5px 21px;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-item,
+    .detail-item:nth-child(2n),
+    .detail-item:nth-last-child(-n + 2) {
+        border-right: 0;
+        border-bottom: 1px solid #edf0f3;
+    }
+
+    .detail-item:last-child {
+        border-bottom: 0;
+    }
+
+    .session-side-column {
+        display: flex;
+    }
+}
+
+@media (max-width: 480px) {
+    .session-show-heading {
+        align-items: flex-start;
+    }
+
+    .session-back-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .session-show-heading p {
+        line-height: 1.5;
+    }
+
+    .vehicle-main-icon {
+        width: 55px;
+        height: 55px;
+        flex-basis: 55px;
+        font-size: 22px;
+    }
+
+    .vehicle-main-info h2 {
+        font-size: 18px;
+    }
+
+    .session-details-card,
+    .session-customer-card,
+    .session-payment-card {
+        padding: 19px;
+    }
+
+    .payment-details > div {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .payment-details strong {
+        text-align: left;
+    }
+}
