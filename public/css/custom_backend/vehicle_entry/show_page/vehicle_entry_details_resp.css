@@ -1,0 +1,63 @@
+/* ============================================================
+   VEHICLE ENTRY DETAILS RESPONSIVE
+============================================================ */
+
+@media (max-width: 900px) {
+    .vehicle-show-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .vehicle-show-main {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .vehicle-entry-header-actions {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .vehicle-entry-header-actions a {
+        justify-content: center;
+    }
+
+    .vehicle-show-card {
+        padding: 18px;
+    }
+
+    .vehicle-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .vehicle-show-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .vehicle-show-actions a {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .vehicle-show-highlight {
+        gap: 12px;
+        padding: 15px;
+    }
+
+    .vehicle-show-avatar {
+        width: 48px;
+        height: 48px;
+        flex: 0 0 48px;
+        font-size: 20px;
+    }
+
+    .vehicle-show-highlight strong {
+        font-size: 16px;
+    }
+
+    .vehicle-show-card-header h2 {
+        font-size: 17px;
+    }
+}

@@ -4,7 +4,13 @@
 @section('content')
     <link rel="stylesheet" href="{{ asset('css/custom_backend/vehicle_entry/show_page/vehicle_entry_layout.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom_backend/vehicle_entry/show_page/vehicle_entry_header.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/vehicle_entry/show_page/vehicle_entry_actions.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/vehicle_entry/show_page/vehicle_entry_show_actions.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/vehicle_entry/show_page/vehicle_entry_header_resp.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom_backend/vehicle_entry/show_page/vehicle_entry_details.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/vehicle_entry/show_page/vehicle_entry_details_cards.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/vehicle_entry/show_page/vehicle_entry_details_actions.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/vehicle_entry/show_page/vehicle_entry_details_resp.css') }}">
     <div class="vehicle-entry-page">
         <div class="vehicle-entry-header">
             <div>

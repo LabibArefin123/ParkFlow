@@ -1,0 +1,18 @@
+/* ============================================================
+   VEHICLE ENTRY DETAIL ACTIONS
+============================================================ */
+
+.vehicle-entry-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.vehicle-show-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    padding-bottom: 10px;
+}

@@ -1,0 +1,170 @@
+.create-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 17px;
+    border-bottom: 1px solid #eef2f7;
+}
+
+.create-panel-header > div:first-child span {
+    display: block;
+    margin-bottom: 4px;
+    color: #94a3b8;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.create-panel-header h2 {
+    margin: 0;
+    color: #1e293b;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.active-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 9px;
+    border-radius: 8px;
+    background: #ecfdf5;
+    color: #059669;
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.active-pill i {
+    font-size: 6px;
+}
+
+.vehicle-identity {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 22px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.vehicle-big-icon {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 14px;
+    background: #eff6ff;
+    color: #2563eb;
+    font-size: 22px;
+}
+
+.vehicle-identity span {
+    display: block;
+    color: #94a3b8;
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+}
+
+.vehicle-identity h3 {
+    margin: 4px 0 2px;
+    color: #0f172a;
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: 0.2px;
+}
+
+.vehicle-identity small {
+    color: #64748b;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.session-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    margin-top: 18px;
+    overflow: hidden;
+    border: 1px solid #eef2f7;
+    border-radius: 11px;
+    background: #eef2f7;
+}
+
+.session-info {
+    min-width: 0;
+    padding: 13px;
+    background: #fff;
+}
+
+.session-info span {
+    display: block;
+    margin-bottom: 5px;
+    color: #94a3b8;
+    font-size: 8px;
+    font-weight: 700;
+}
+
+.session-info strong {
+    display: block;
+    overflow: hidden;
+    color: #475569;
+    font-size: 10px;
+    font-weight: 800;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.session-info small {
+    display: block;
+    margin-top: 3px;
+    color: #94a3b8;
+    font-size: 8px;
+}
+
+.customer-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 17px;
+    padding: 12px;
+    border: 1px solid #eef2f7;
+    border-radius: 10px;
+    background: #fafbfc;
+}
+
+.customer-info-icon {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+    background: #f1f5f9;
+    color: #64748b;
+    font-size: 12px;
+}
+
+.customer-info span {
+    display: block;
+    margin-bottom: 3px;
+    color: #94a3b8;
+    font-size: 8px;
+    font-weight: 800;
+}
+
+.customer-info strong {
+    display: block;
+    color: #475569;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.customer-info small {
+    display: block;
+    margin-top: 2px;
+    color: #94a3b8;
+    font-size: 8px;
+}

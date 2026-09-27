@@ -1,0 +1,63 @@
+/* ============================================================
+   VEHICLE ENTRY RESPONSIVE
+============================================================ */
+
+@media (max-width: 800px) {
+    .vehicle-entry-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .vehicle-entry-header-actions {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .vehicle-entry-header-actions a {
+        flex: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .vehicle-entry-header {
+        gap: 18px;
+        margin-bottom: 20px;
+    }
+
+    .vehicle-entry-header h1 {
+        font-size: 24px;
+    }
+
+    .vehicle-entry-header p {
+        font-size: 12px;
+    }
+
+    .vehicle-entry-header-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .vehicle-entry-header-actions a {
+        width: 100%;
+    }
+
+    .vehicle-show-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 9px;
+    }
+
+    .vehicle-show-actions a {
+        width: 100%;
+    }
+
+    .vehicle-show-actions .entry-submit-btn {
+        margin-left: 0;
+        grid-row: 1;
+    }
+
+    .vehicle-show-actions .entry-cancel-btn {
+        grid-row: 2;
+    }
+}

@@ -1,45 +1,17 @@
-.vehicle-entry-header-actions {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+/* ============================================================
+   VEHICLE ENTRY DETAILS
+============================================================ */
+
 .vehicle-show-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
 }
-.vehicle-show-card {
-    background: #fff;
-    border: 1px solid #e9edf2;
-    border-radius: 18px;
-    padding: 24px;
-    box-shadow: 0 8px 30px rgba(25, 42, 70, 0.06);
-}
+
 .vehicle-show-main {
-    grid-column: 1/-1;
+    grid-column: 1 / -1;
 }
-.vehicle-show-card-header {
-    display: flex;
-    align-items: center;
-    gap: 13px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #edf0f3;
-    margin-bottom: 20px;
-}
-.vehicle-show-card-header span {
-    display: block;
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-    color: #8993a0;
-    margin-bottom: 4px;
-}
-.vehicle-show-card-header h2 {
-    margin: 0;
-    font-size: 19px;
-    font-weight: 700;
-    color: #202832;
-}
+
 .vehicle-show-highlight {
     display: flex;
     align-items: center;
@@ -50,6 +22,7 @@
     padding: 18px;
     margin-bottom: 20px;
 }
+
 .vehicle-show-avatar {
     width: 54px;
     height: 54px;
@@ -61,12 +34,14 @@
     color: #536779;
     font-size: 22px;
 }
+
 .vehicle-show-highlight strong {
     display: block;
     font-size: 18px;
     color: #202832;
     font-weight: 750;
 }
+
 .vehicle-show-highlight span {
     display: block;
     margin-top: 3px;
@@ -74,17 +49,20 @@
     font-size: 13px;
     text-transform: capitalize;
 }
+
 .vehicle-detail-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 14px;
 }
+
 .vehicle-detail-item {
     padding: 15px 16px;
     border: 1px solid #edf0f3;
     border-radius: 13px;
     background: #fff;
 }
+
 .vehicle-detail-item span {
     display: block;
     font-size: 11px;
@@ -94,119 +72,11 @@
     color: #9099a4;
     margin-bottom: 7px;
 }
+
 .vehicle-detail-item strong {
     display: block;
     font-size: 14px;
     color: #29333e;
     font-weight: 650;
     word-break: break-word;
-}
-.parking-detail-box {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 18px;
-    background: #f7faf8;
-    border: 1px solid #e4eee8;
-    border-radius: 15px;
-    margin-bottom: 15px;
-}
-.parking-detail-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 13px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #eaf4ed;
-    color: #4d7b5b;
-    font-size: 20px;
-}
-.parking-detail-box span {
-    display: block;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    font-weight: 700;
-    color: #89958d;
-}
-.parking-detail-box strong {
-    display: block;
-    margin-top: 4px;
-    font-size: 17px;
-    color: #29352e;
-}
-.vehicle-notes {
-    display: flex;
-    gap: 13px;
-    margin-top: 16px;
-    padding: 16px;
-    border-radius: 14px;
-    background: #f8fafc;
-    border: 1px solid #edf0f3;
-}
-.vehicle-notes-icon {
-    width: 38px;
-    height: 38px;
-    flex: 0 0 38px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #eef2f6;
-    color: #657382;
-}
-.vehicle-notes span {
-    display: block;
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    color: #8993a0;
-    margin-bottom: 5px;
-}
-.vehicle-notes p {
-    margin: 0;
-    color: #596572;
-    font-size: 13px;
-    line-height: 1.6;
-}
-.vehicle-show-actions {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 10px;
-    margin-top: 20px;
-    padding-bottom: 10px;
-}
-@media (max-width: 900px) {
-    .vehicle-show-grid {
-        grid-template-columns: 1fr;
-    }
-    .vehicle-show-main {
-        grid-column: auto;
-    }
-}
-@media (max-width: 600px) {
-    .vehicle-entry-header-actions {
-        width: 100%;
-        flex-direction: column;
-        align-items: stretch;
-    }
-    .vehicle-show-card {
-        padding: 18px;
-    }
-    .vehicle-detail-grid {
-        grid-template-columns: 1fr;
-    }
-    .vehicle-show-actions {
-        flex-direction: column;
-        align-items: stretch;
-    }
-    .vehicle-show-actions a {
-        width: 100%;
-        justify-content: center;
-    }
-    .vehicle-entry-header-actions a {
-        justify-content: center;
-    }
 }

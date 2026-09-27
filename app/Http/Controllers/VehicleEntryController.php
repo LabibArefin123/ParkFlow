@@ -121,6 +121,7 @@ class VehicleEntryController extends Controller
 
     public function edit(ParkingSession $vehicleEntry)
     {
+        $user = auth()->user();
         $vehicleEntry->load([
             'vehicle',
             'parkingSpot.parkingLocation',
@@ -137,7 +138,7 @@ class VehicleEntryController extends Controller
             }])
             ->orderBy('name')
             ->get();
-        return view('parkflow.vehicle_entry.edit', compact('vehicleEntry', 'locations'));
+        return view('parkflow.vehicle_entry.edit', compact('user','vehicleEntry', 'locations'));
     }
 
     public function update(Request $request, ParkingSession $vehicleEntry)

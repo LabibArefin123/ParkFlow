@@ -1,0 +1,120 @@
+.payment-icon {
+    width: 37px;
+    height: 37px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #f1f5f9;
+    color: #475569;
+}
+
+.amount-box {
+    margin: 20px 0;
+    padding: 17px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: #f8fafc;
+    text-align: center;
+}
+
+.amount-box > span {
+    display: block;
+    color: #94a3b8;
+    font-size: 9px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+}
+
+.amount-value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 6px 0 2px;
+}
+
+.amount-value small {
+    color: #64748b;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.amount-value input {
+    width: 150px;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #0f172a;
+    font-size: 30px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.amount-value input::-webkit-inner-spin-button,
+.amount-value input::-webkit-outer-spin-button {
+    margin: 0;
+}
+
+.amount-box > small {
+    color: #94a3b8;
+    font-size: 8px;
+}
+
+.payment-method-section {
+    margin-bottom: 18px;
+}
+
+.payment-method-section > label {
+    display: block;
+    margin-bottom: 8px;
+    color: #475569;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.payment-method-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.payment-option {
+    cursor: pointer;
+}
+
+.payment-option input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.payment-option span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 39px;
+    border: 1px solid #e2e8f0;
+    border-radius: 9px;
+    background: #fff;
+    color: #64748b;
+    font-size: 9px;
+    font-weight: 800;
+    transition: 0.2s ease;
+}
+
+.payment-option span i {
+    font-size: 11px;
+}
+
+.payment-option input:checked + span {
+    border-color: #0f172a;
+    background: #0f172a;
+    color: #fff;
+}
+
+.payment-option:hover span {
+    border-color: #cbd5e1;
+}
