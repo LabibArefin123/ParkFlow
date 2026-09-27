@@ -89,8 +89,8 @@ class ParkingSessionController extends Controller
             'entry_time' => $parkingSession->entry_time?->format('h:i A') ?? '-',
             'entry_date' => $parkingSession->entry_time?->format('d M Y') ?? '-',
 
-            'exit_time' => $parkingSession->exit_time?->format('h:i A') ?? '-',
-            'exit_date' => $parkingSession->exit_time?->format('d M Y') ?? '-',
+            'exit_time' => $parkingSession->entry_time?->format('h:i A') ?? '-',
+            'exit_date' => $parkingSession->entry_time?->format('d M Y') ?? '-',
 
             'duration' => $parkingSession->duration_minutes
                 ? floor($parkingSession->duration_minutes / 60) . 'h ' .

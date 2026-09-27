@@ -1,0 +1,75 @@
+.entry-alert {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    margin-bottom: 18px;
+    padding: 13px 15px;
+    border: 1px solid #fecaca;
+    border-radius: 11px;
+    background: #fef2f2;
+    color: #991b1b;
+}
+
+.entry-alert-icon {
+    font-size: 14px;
+}
+
+.entry-alert strong {
+    display: block;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.entry-alert ul {
+    margin: 4px 0 0;
+    padding-left: 16px;
+    font-size: 10px;
+}
+
+.entry-form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 9px;
+    margin-top: 18px;
+}
+
+.entry-cancel-btn,
+.entry-submit-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 40px;
+    border: 0;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: 0.2s ease;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.entry-cancel-btn {
+    padding: 0 16px;
+    border: 1px solid #e2e8f0;
+    background: #fff;
+    color: #64748b;
+}
+
+.entry-cancel-btn:hover {
+    background: #f8fafc;
+    color: #334155;
+}
+
+.entry-submit-btn {
+    padding: 0 17px;
+    background: #0f172a;
+    color: #fff;
+    box-shadow: 0 7px 18px rgba(15, 23, 42, 0.12);
+}
+
+.entry-submit-btn:hover {
+    background: #1e293b;
+    transform: translateY(-1px);
+}

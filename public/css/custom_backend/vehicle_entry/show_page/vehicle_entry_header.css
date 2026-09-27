@@ -1,0 +1,199 @@
+/* ============================================================
+   VEHICLE ENTRY HEADER ACTIONS
+============================================================ */
+.vehicle-entry-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.vehicle-entry-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 7px;
+    color: #64748b;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+.vehicle-entry-header h1 {
+    margin: 0;
+    color: #0f172a;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.vehicle-entry-header p {
+    margin: 6px 0 0;
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+.entry-back-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 40px;
+    padding: 0 14px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    background: #fff;
+    color: #475569;
+    font-size: 11px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.entry-back-btn:hover {
+    background: #f8fafc;
+    color: #0f172a;
+}
+
+.vehicle-entry-header-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.vehicle-entry-header-actions a,
+.vehicle-show-actions a {
+    min-height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 16px;
+    border-radius: 11px;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 1;
+    text-decoration: none;
+    letter-spacing: 0.1px;
+    transition: all 0.22s ease;
+    white-space: nowrap;
+}
+.vehicle-entry-header-actions a i,
+.vehicle-show-actions a i {
+    font-size: 12px;
+    transition: transform 0.22s ease;
+}
+
+/* Primary Edit Button */
+
+.vehicle-entry-header-actions .entry-submit-btn,
+.vehicle-show-actions .entry-submit-btn {
+    color: #fff;
+    background: #0f172a;
+    border: 1px solid #0f172a;
+    box-shadow: 0 5px 14px rgba(15, 23, 42, 0.14);
+}
+.vehicle-entry-header-actions .entry-submit-btn:hover,
+.vehicle-show-actions .entry-submit-btn:hover {
+    color: #fff;
+    background: #1e293b;
+    border-color: #1e293b;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.18);
+}
+.vehicle-entry-header-actions .entry-submit-btn:hover i,
+.vehicle-show-actions .entry-submit-btn:hover i {
+    transform: rotate(-4deg);
+}
+
+/* Secondary Back Button */
+
+.vehicle-entry-header-actions .entry-back-btn,
+.vehicle-show-actions .entry-cancel-btn {
+    color: #475569;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
+}
+.vehicle-entry-header-actions .entry-back-btn:hover,
+.vehicle-show-actions .entry-cancel-btn:hover {
+    color: #0f172a;
+    background: #f8fafc;
+    border-color: #cbd5e1;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 16px rgba(15, 23, 42, 0.08);
+}
+.vehicle-entry-header-actions .entry-back-btn:hover i,
+.vehicle-show-actions .entry-cancel-btn:hover i {
+    transform: translateX(-3px);
+}
+
+/* ============================================================
+   VEHICLE SHOW FOOTER ACTIONS
+============================================================ */
+
+.vehicle-show-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid #edf1f5;
+}
+.vehicle-show-actions .entry-submit-btn {
+    margin-left: auto;
+}
+
+/* ============================================================
+   FOCUS STATES
+============================================================ */
+
+.vehicle-entry-header-actions a:focus-visible,
+.vehicle-show-actions a:focus-visible {
+    outline: 3px solid rgba(15, 23, 42, 0.12);
+    outline-offset: 2px;
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width: 800px) {
+    .vehicle-entry-header-actions {
+        width: 100%;
+        justify-content: flex-start;
+    }
+    .vehicle-entry-header-actions a {
+        flex: 1;
+    }
+}
+@media (max-width: 600px) {
+    .vehicle-entry-header-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    .vehicle-entry-header-actions a {
+        width: 100%;
+    }
+    .vehicle-show-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 9px;
+    }
+    .vehicle-show-actions a {
+        width: 100%;
+    }
+    .vehicle-show-actions .entry-submit-btn {
+        margin-left: 0;
+        grid-row: 1;
+    }
+    .vehicle-show-actions .entry-cancel-btn {
+        grid-row: 2;
+    }
+}
