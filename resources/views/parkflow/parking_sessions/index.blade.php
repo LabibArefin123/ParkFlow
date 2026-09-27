@@ -173,12 +173,12 @@
 
                                 <td>
                                     <div class="customer-name">
-                                        {{ $session->customer?->name ?? 'Walk-in Customer' }}
+                                        {{ $session->vehicle?->owner_name ?? 'Walk-in Customer' }}
                                     </div>
 
                                     @if ($session->customer?->phone)
                                         <div class="customer-phone">
-                                            {{ $session->customer->phone }}
+                                            {{ $session->vehicle->phone }}
                                         </div>
                                     @endif
                                 </td>
@@ -209,7 +209,6 @@
                                 <td>
                                     <span class="duration-badge">
                                         <i class="fa-regular fa-clock"></i>
-
                                         @if ($session->duration_minutes)
                                             {{ floor($session->duration_minutes / 60) }}h
                                             {{ $session->duration_minutes % 60 }}m
@@ -218,7 +217,6 @@
                                         @else
                                             -
                                         @endif
-
                                     </span>
                                 </td>
 

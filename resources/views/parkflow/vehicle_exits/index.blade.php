@@ -147,10 +147,10 @@
 
                             <div class="exit-customer">
                                 <span class="detail-label">Customer</span>
-                                <strong> {{ $session->customer?->name ?? 'Walk-in Customer' }} </strong>
+                                <strong> {{ $session->vehicle?->owner_name ?? 'Walk-in Customer' }} </strong>
 
                                 @if ($session->customer?->phone)
-                                    <small> {{ $session->customer->phone }}</small>
+                                    <small> {{ $session->vehicle->phone }}</small>
                                 @endif
                             </div>
 

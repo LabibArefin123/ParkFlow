@@ -80,8 +80,8 @@ class ParkingSessionController extends Controller
                 default => 'fa-solid fa-car-side',
             },
 
-            'customer_name' => $parkingSession->customer?->name ?? 'Walk-in Customer',
-            'customer_phone' => $parkingSession->customer?->phone ?? null,
+            'customer_name' => $parkingSession->vehicle?->owner_name ?? 'Walk-in Customer',
+            'customer_phone' => $parkingSession->vehicle?->phone ?? null,
 
             'spot_number' => $parkingSession->parkingSpot?->spot_number ?? '-',
             'location_name' => $parkingSession->parkingSpot?->parkingLocation?->name ?? 'Main Parking',

@@ -48,14 +48,14 @@
                         <i class="fas fa-car-side"></i>
                     </div>
                     <div>
-                        <strong>{{ $vehicleEntry->registration_number }}</strong>
+                        <strong>{{ $vehicleEntry->vehicle->registration_number }}</strong>
                         <span>{{ ucfirst($vehicleEntry->type) }}</span>
                     </div>
                 </div>
                 <div class="vehicle-detail-grid">
                     <div class="vehicle-detail-item">
                         <span>Registration Number</span>
-                        <strong>{{ $vehicleEntry->registration_number }}</strong>
+                        <strong>{{ $vehicleEntry->vehicle->registration_number }}</strong>
                     </div>
                     <div class="vehicle-detail-item">
                         <span>Vehicle Type</span>
@@ -63,11 +63,11 @@
                     </div>
                     <div class="vehicle-detail-item">
                         <span>Customer Name</span>
-                        <strong>{{ $vehicleEntry->customer_name ?: 'Not provided' }}</strong>
+                        <strong>{{ $vehicleEntry->vehicle->owner_name ?: 'Not provided' }}</strong>
                     </div>
                     <div class="vehicle-detail-item">
                         <span>Phone Number</span>
-                        <strong>{{ $vehicleEntry->customer_phone ?: 'Not provided' }}</strong>
+                        <strong>{{ $vehicleEntry->vehicle->phone ?: 'Not provided' }}</strong>
                     </div>
                 </div>
             </div>
