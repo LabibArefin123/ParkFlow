@@ -45,7 +45,7 @@ class ActiveSessionController extends Controller
             });
         }
 
-        $activeSessions = $query->paginate(12)->withQueryString();
+        $activeSessions = $query->paginate(10)->withQueryString();
 
         $totalActive = ParkingSession::where('status', 'active')->count();
 

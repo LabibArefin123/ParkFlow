@@ -112,9 +112,9 @@
 
                     <div>
                         <span>CUSTOMER</span>
-                        <strong>{{ $parkingSession->customer?->name ?? 'Walk-in Customer' }}</strong>
-                        @if ($parkingSession->customer?->phone)
-                            <small>{{ $parkingSession->customer->phone }}</small>
+                        <strong>{{ $parkingSession->vehicle?->owner_name ?? 'Walk-in Customer' }}</strong>
+                        @if ($parkingSession->vehicle?->phone)
+                            <small>{{ $parkingSession->vehicle->phone }}</small>
                         @endif
                     </div>
                 </div>

@@ -1,0 +1,46 @@
+/* ============================================================
+   ADMIN STATS - CONTENT
+============================================================ */
+
+.admin-stat-content {
+    position: relative;
+    z-index: 2;
+}
+
+.admin-stat-label {
+    display: block;
+    margin-bottom: 5px;
+    color: #7d8798;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+}
+
+.admin-stat-value {
+    color: #172033;
+    font-size: 30px;
+    line-height: 1.15;
+    font-weight: 800;
+    letter-spacing: -1px;
+    animation: adminValueReveal 0.7s ease both;
+}
+
+.admin-stat-description {
+    min-height: 36px;
+    margin: 7px 0 0;
+    color: #9aa3b2;
+    font-size: 11px;
+    line-height: 1.65;
+}
+
+/* Footer icons */
+
+.admin-stat-footer span i {
+    color: #c98512;
+    font-size: 10px;
+}
+
+.admin-stat-footer > i {
+    color: #c98512;
+}

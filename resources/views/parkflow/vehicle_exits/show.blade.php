@@ -107,10 +107,10 @@
 
                 <div>
                     <span>CUSTOMER</span>
-                    <strong>{{ $vehicleExit->customer?->name ?? 'Walk-in Customer' }}</strong>
+                    <strong>{{ $vehicleExit->vehicle?->name ?? 'Walk-in Customer' }}</strong>
 
-                    @if ($vehicleExit->customer?->phone)
-                        <small>{{ $vehicleExit->customer->phone }}</small>
+                    @if ($vehicleExit->vehicle?->phone)
+                        <small>{{ $vehicleExit->vehicle->phone }}</small>
                     @endif
                 </div>
             </div>
