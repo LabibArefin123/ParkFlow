@@ -16,7 +16,6 @@
         <div class="parkflow-dashboard">
             @include('parkflow.dashboard.partials.part_1')
             @include('parkflow.dashboard.partials.part_2')
-            
             <div class="dashboard-grid">
                 @include('parkflow.dashboard.partials.part_3a')
                 @include('parkflow.dashboard.partials.part_3b')
