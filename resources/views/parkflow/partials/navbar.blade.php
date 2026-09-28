@@ -2,9 +2,7 @@
     <div class="parkflow-navbar-inner">
         <div class="parkflow-navbar-left">
             <button type="button" class="parkflow-mobile-toggle" id="parkflowSidebarToggle">
-
                 <i class="fa-solid fa-bars"></i>
-
             </button>
 
             <div class="parkflow-page-heading">
@@ -22,11 +20,7 @@
             <div class="parkflow-navbar-divider"></div>
             @if ($user)
                 <a href="{{ route('profile.show') }}" class="parkflow-user">
-
-                    <div class="parkflow-user-avatar">
-                        {{ strtoupper(substr($user->name ?? 'U', 0, 1)) }}
-                    </div>
-
+                    <div class="parkflow-user-avatar"> {{ strtoupper(substr($user->name ?? 'U', 0, 1)) }} </div>
                     <div class="parkflow-user-info">
                         <span class="parkflow-user-name">{{ $user->name ?? 'User' }}</span>
                         <span class="parkflow-user-role">ParkFlow Operator</span>
