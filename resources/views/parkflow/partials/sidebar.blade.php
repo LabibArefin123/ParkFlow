@@ -13,5 +13,5 @@
         @include('parkflow.partials.sidebar_part.part_6')\
     </div>
     {{-- Footer Part --}}
-    @include('parkflow.partials.sidebar_part.footer')
+    @include('parkflow.partials.sidebar_part.part_7')
 </aside>
