@@ -103,7 +103,6 @@ class ReportController extends Controller
         $recentSessions = ParkingSession::with([
             'vehicle',
             'parkingSpot.parkingLocation',
-            'customer',
             'payment',
         ])
             ->where('status', 'completed')
