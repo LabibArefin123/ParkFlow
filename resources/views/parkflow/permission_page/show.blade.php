@@ -1,136 +1,152 @@
 @extends('parkflow.layouts.app')
 
-@section('title', 'View User')
+@section('title', 'Permission Details')
 
 @push('styles')
-    <link rel="stylesheet" href="{{ asset('css/custom_backend/user_page/show_page/user_header.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/custom_backend/user_page/show_page/user_form.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/custom_backend/user_page/show_page/user_fields.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/custom_backend/user_page/show_page/user_roles.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/custom_backend/user_page/show_page/user_footer.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/custom_backend/user_page/show_page/user_resp.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/permission_page/show_page/permission_header.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/permission_page/show_page/permission_card.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/permission_page/show_page/permission_details.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/permission_page/show_page/permission_status.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/permission_page/show_page/permission_actions.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/permission_page/show_page/permission_resp.css') }}">
 @endpush
 
 @section('content')
-    <div class="rp-page">
-        <div class="rp-header">
-            <div>
-                <div class="rp-eyebrow">
-                    <i class="fa-solid fa-user"></i>
-                    User Management
-                </div>
+    <div class="permission-header">
+        <div>
+            <div class="permission-eyebrow"> <i class="fa-solid fa-key"></i>
+                Access Control </div>
 
-                <h1>View User</h1>
 
-                <p>
-                    Review this ParkFlow user's account details and assigned access role.
-                </p>
-            </div>
+            <h1>Permission Details</h1>
 
-            <a href="{{ route('users.index') }}" class="rp-secondary-btn">
-                <i class="fa-solid fa-arrow-left"></i>
-                Back
-            </a>
+            <p>Review the capability configuration and access-control information.</p>
         </div>
 
-        <div class="rp-form-panel">
-            <div class="rp-form-header">
-                <div class="rp-form-icon user-icon">
-                    <i class="fa-solid fa-user"></i>
+        <a href="{{ route('permissions.index') }}" class="permission-secondary-btn">
+            <i class="fa-solid fa-arrow-left"></i>
+            Back to Permissions
+        </a>
+    </div>
+
+    <div class="permission-show-card">
+        <div class="permission-card-top">
+            <div class="permission-identity">
+                <div class="permission-icon">
+                    <i class="fa-solid fa-key"></i>
                 </div>
 
                 <div>
-                    <h2>{{ $user->name }}</h2>
-                    <p>User account information and access details. </p>
+                    <span class="permission-label">Permission</span>
+
+                    <h2>{{ $permission->name }}</h2>
+
+                    <p>
+                        Capability ID #{{ $permission->id }}
+                    </p>
                 </div>
             </div>
 
-            <div class="rp-form-grid">
-                <div class="rp-field">
-                    <label> Full Name</label>
-                    <div class="rp-input">
-                        <i class="fa-solid fa-user"></i>
-                        <input type="text" value="{{ $user->name }}" readonly>
-                    </div>
-                </div>
-
-                <div class="rp-field">
-                    <label> Email Address </label>
-                    <div class="rp-input">
-                        <i class="fa-solid fa-envelope"></i>
-                        <input type="text" value="{{ $user->email }}" readonly>
-                    </div>
-                </div>
-
-                <div class="rp-field">
-                    <label>Account Created</label>
-                    <div class="rp-input">
-                        <i class="fa-solid fa-calendar"></i>
-                        <input type="text" value="{{ $user->created_at?->format('d M Y, h:i A') }}" readonly>
-                    </div>
-                </div>
-
-                <div class="rp-field">
-                    <label> Last Updated </label>
-                    <div class="rp-input">
-                        <i class="fa-solid fa-clock"></i>
-
-                        <input type="text" value="{{ $user->updated_at?->format('d M Y, h:i A') }}" readonly>
-                    </div>
-                </div>
-
+            <div class="permission-status">
+                <span class="permission-status-dot"></span>
+                Active
             </div>
+        </div>
 
-            <div class="rp-role-section">
-                <div class="rp-role-header">
-                    <div>
-                        <h3>
-                            <i class="fa-solid fa-user-shield"></i>
-                            Assigned Role
-                        </h3>
-
-                        <p>Access role currently assigned to this user.</p>
-                    </div>
+        <div class="permission-details">
+            <div class="permission-detail">
+                <div class="permission-detail-icon">
+                    <i class="fa-solid fa-key"></i>
                 </div>
 
-                <div class="rp-role-grid">
-                    @forelse ($user->roles as $role)
-                        <div class="rp-role-item rp-role-item-static">
-                            <span class="rp-role-check">
-                                <i class="fa-solid fa-check"></i>
-                            </span>
-
-                            <span class="rp-role-content">
-                                <strong>{{ $role->name }}</strong>
-
-                                <small> {{ $role->permissions->count() }} permissions </small>
-                            </span>
-                        </div>
-                    @empty
-                        <div class="rp-empty rp-empty-small">
-                            <div class="rp-empty-icon">
-                                <i class="fa-solid fa-user-slash"></i>
-                            </div>
-
-                            <h3>No role assigned</h3>
-
-                            <p>This user does not currently have an assigned role. </p>
-                        </div>
-                    @endforelse
+                <div>
+                    <span>Permission Name</span>
+                    <strong>{{ $permission->name }}</strong>
                 </div>
             </div>
 
-            <div class="rp-form-footer">
-                <a href="{{ route('users.index') }}" class="rp-secondary-btn">
-                    <i class="fa-solid fa-arrow-left"></i>
-                    Back
-                </a>
+            <div class="permission-detail">
+                <div class="permission-detail-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
 
-                <a href="{{ route('users.edit', $user) }}" class="rp-primary-btn">
-                    <i class="fa-solid fa-pen"></i>
-                    Edit User
-                </a>
+                <div>
+                    <span>Guard Name</span>
+                    <strong>{{ $permission->guard_name }}</strong>
+                </div>
             </div>
+
+            <div class="permission-detail">
+                <div class="permission-detail-icon">
+                    <i class="fa-solid fa-fingerprint"></i>
+                </div>
+
+                <div>
+                    <span>Permission ID</span>
+                    <strong>#{{ $permission->id }}</strong>
+                </div>
+            </div>
+
+            <div class="permission-detail">
+                <div class="permission-detail-icon">
+                    <i class="fa-solid fa-calendar-plus"></i>
+                </div>
+
+                <div>
+                    <span>Created</span>
+                    <strong>{{ $permission->created_at->format('d M Y, h:i A') }}</strong>
+                </div>
+            </div>
+
+            <div class="permission-detail">
+                <div class="permission-detail-icon">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                </div>
+
+                <div>
+                    <span>Last Updated</span>
+                    <strong>{{ $permission->updated_at->format('d M Y, h:i A') }}</strong>
+                </div>
+            </div>
+
+            <div class="permission-detail">
+                <div class="permission-detail-icon">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+
+                <div>
+                    <span>Authentication</span>
+                    <strong>Web Guard</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="permission-info">
+            <div class="permission-info-icon">
+                <i class="fa-solid fa-circle-info"></i>
+            </div>
+
+            <div>
+                <strong>Access Control Capability</strong>
+
+                <p>
+                    This permission represents a specific capability within ParkFlow.
+                    It can be assigned to one or more roles to control access to protected
+                    application features.
+                </p>
+            </div>
+        </div>
+
+        <div class="permission-actions">
+            <a href="{{ route('permissions.edit', $permission) }}" class="permission-primary-btn">
+                <i class="fa-solid fa-pen-to-square"></i>
+                Edit Permission
+            </a>
+
+            <a href="{{ route('permissions.index') }}" class="permission-secondary-btn">
+                <i class="fa-solid fa-list"></i>
+                All Permissions
+            </a>
         </div>
     </div>
 @endsection

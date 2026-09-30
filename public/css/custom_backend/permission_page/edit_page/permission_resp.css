@@ -1,81 +1,124 @@
-@media (max-width: 768px) {
-    .rp-page {
-        padding: 5px 0 25px;
-    }
-
-    .rp-header {
+@media (max-width: 991.98px) {
+    .permission-header {
         align-items: flex-start;
+        margin-bottom: 22px;
+    }
+
+    .permission-header h1 {
+        font-size: 27px;
+    }
+
+    .permission-form-panel {
+        padding: 25px;
+        border-radius: 19px;
+    }
+
+    .permission-form-grid {
+        gap: 17px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .permission-header {
         flex-direction: column;
-        gap: 16px;
-        margin-bottom: 20px;
+        gap: 17px;
     }
 
-    .rp-header h1 {
-        font-size: 25px;
+    .permission-header .permission-secondary-btn {
+        width: fit-content;
     }
 
-    .rp-header p {
+    .permission-header h1 {
+        font-size: 24px;
+    }
+
+    .permission-header p {
         font-size: 13px;
     }
 
-    .rp-form-header {
-        padding: 18px;
+    .permission-form-panel {
+        padding: 21px;
     }
 
-    .rp-form-grid {
+    .permission-form-header {
+        align-items: flex-start;
+    }
+
+    .permission-form-grid {
         grid-template-columns: 1fr;
-        gap: 17px;
-        padding: 18px;
+        gap: 18px;
+        margin-top: 23px;
     }
 
-    .rp-form-grid:after {
-        display: none;
-    }
-
-    .rp-field:first-child,
-    .rp-field:last-child {
-        padding-right: 0;
-        padding-left: 0;
-    }
-
-    .rp-form-footer {
+    .permission-form-footer {
         align-items: stretch;
         flex-direction: column-reverse;
-        padding: 16px 18px;
     }
 
-    .rp-form-footer .rp-primary-btn,
-    .rp-form-footer .rp-secondary-btn {
+    .permission-form-footer .permission-primary-btn,
+    .permission-form-footer .permission-secondary-btn {
         width: 100%;
     }
 }
 
-@media (max-width: 480px) {
-    .rp-header h1 {
+@media (max-width: 479.98px) {
+    .permission-header h1 {
         font-size: 22px;
     }
 
-    .rp-eyebrow {
-        font-size: 10px;
+    .permission-form-panel {
+        padding: 17px;
+        border-radius: 16px;
     }
 
-    .rp-form-icon {
-        width: 42px;
-        height: 42px;
-        flex-basis: 42px;
-        font-size: 15px;
+    .permission-form-header {
+        gap: 12px;
+        padding-bottom: 20px;
     }
 
-    .rp-form-header h2 {
-        font-size: 15px;
+    .permission-form-icon {
+        width: 51px;
+        height: 51px;
+        flex-basis: 51px;
+        border-radius: 14px;
+        font-size: 19px;
     }
 
-    .rp-form-header p {
-        font-size: 11px;
+    .permission-form-header h2 {
+        font-size: 17px;
     }
 
-    .rp-input input,
-    .rp-input select {
-        height: 41px;
+    .permission-form-header p {
+        font-size: 12px;
+    }
+
+    .permission-input input,
+    .permission-input select {
+        min-height: 46px;
+        padding-left: 40px;
+    }
+
+    .permission-info {
+        padding: 14px;
+    }
+
+    .permission-form-footer {
+        margin-top: 21px;
+        padding-top: 19px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .permission-header,
+    .permission-form-panel,
+    .permission-error {
+        animation: none;
+    }
+
+    .permission-form-panel *,
+    .permission-info,
+    .permission-primary-btn,
+    .permission-secondary-btn {
+        transition: none;
     }
 }

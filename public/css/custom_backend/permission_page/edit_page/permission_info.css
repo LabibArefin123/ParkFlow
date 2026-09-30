@@ -1,28 +1,52 @@
-.rp-form-grid{
-    position:relative;
+.permission-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    margin-top: 24px;
+    padding: 17px 18px;
+    border: 1px solid rgba(93, 141, 246, 0.14);
+    border-radius: 15px;
+    background: linear-gradient(
+        135deg,
+        rgba(93, 141, 246, 0.055),
+        rgba(124, 92, 252, 0.035)
+    );
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
 }
 
-.rp-form-grid:after{
-    content:"";
-    position:absolute;
-    left:50%;
-    top:24px;
-    bottom:24px;
-    width:1px;
-    background:#edf0f4;
-    transform:translateX(-10px);
-    pointer-events:none;
+.permission-info:hover {
+    border-color: rgba(93, 141, 246, 0.22);
+    box-shadow: 0 8px 22px rgba(93, 141, 246, 0.055);
+    transform: translateY(-1px);
 }
 
-.rp-field{
-    position:relative;
-    z-index:1;
+.permission-info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+    border-radius: 10px;
+    background: rgba(93, 141, 246, 0.1);
+    color: #5d8df6;
+    font-size: 14px;
 }
 
-.rp-field:first-child{
-    padding-right:10px;
+.permission-info strong {
+    display: block;
+    margin-bottom: 4px;
+    color: #344054;
+    font-size: 13px;
+    font-weight: 800;
 }
 
-.rp-field:last-child{
-    padding-left:10px;
+.permission-info p {
+    margin: 0;
+    color: #7d8796;
+    font-size: 12px;
+    line-height: 1.65;
 }

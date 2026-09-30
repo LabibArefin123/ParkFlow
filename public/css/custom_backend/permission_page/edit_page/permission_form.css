@@ -1,78 +1,138 @@
-.rp-form-panel {
+.permission-form-panel {
+    position: relative;
     overflow: hidden;
-    border: 1px solid #e5e9ef;
-    border-radius: 15px;
-    background: #fff;
-    box-shadow: 0 7px 24px rgba(15, 23, 42, 0.045);
-}
-
-.rp-form-panel form {
     width: 100%;
+    padding: 30px;
+    border: 1px solid rgba(226, 230, 238, 0.9);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.97);
+    box-shadow:
+        0 18px 50px rgba(31, 41, 55, 0.07),
+        0 4px 16px rgba(31, 41, 55, 0.04);
+    animation: permissionFormReveal 0.55s ease both;
 }
 
-.rp-form-header {
+.permission-form-panel::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #7c5cfc, #9c7cff, #5d8df6);
+    content: "";
+}
+
+.permission-form-panel::after {
+    position: absolute;
+    top: -120px;
+    right: -100px;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(124, 92, 252, 0.075) 0%,
+        rgba(124, 92, 252, 0) 70%
+    );
+    content: "";
+    pointer-events: none;
+}
+
+.permission-form-panel form {
+    position: relative;
+    z-index: 1;
+}
+
+.permission-form-header {
     display: flex;
     align-items: center;
-    gap: 14px;
-    padding: 22px 24px;
-    border-bottom: 1px solid #edf0f4;
-    background: #fcfdff;
+    gap: 16px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #edf0f5;
 }
 
-.rp-form-icon {
+.permission-form-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 46px;
-    height: 46px;
-    flex: 0 0 46px;
-    border-radius: 12px;
-    font-size: 17px;
+    width: 58px;
+    height: 58px;
+    flex: 0 0 58px;
+    border: 1px solid rgba(124, 92, 252, 0.14);
+    border-radius: 17px;
+    background: linear-gradient(
+        145deg,
+        rgba(124, 92, 252, 0.14),
+        rgba(124, 92, 252, 0.045)
+    );
+    color: #7c5cfc;
+    font-size: 21px;
+    box-shadow: 0 8px 22px rgba(124, 92, 252, 0.08);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-.rp-form-icon.permission-icon {
-    border: 1px solid #d9e3f3;
-    background: #f2f6fc;
-    color: #4d76ad;
+.permission-form-panel:hover .permission-form-icon {
+    transform: translateY(-2px) rotate(-3deg);
+    box-shadow: 0 12px 27px rgba(124, 92, 252, 0.13);
 }
 
-.rp-form-header h2 {
+.permission-form-header h2 {
     margin: 0;
-    color: #202a3c;
-    font-size: 17px;
-    line-height: 1.3;
+    color: #202938;
+    font-size: 19px;
     font-weight: 800;
+    letter-spacing: -0.25px;
 }
 
-.rp-form-header p {
+.permission-form-header p {
     margin: 5px 0 0;
-    color: #8490a1;
-    font-size: 12px;
-    line-height: 1.5;
+    color: #8993a2;
+    font-size: 13px;
+    line-height: 1.55;
 }
 
-.rp-error {
+.permission-error {
     display: flex;
     align-items: flex-start;
     gap: 11px;
-    margin: 20px 24px 0;
-    padding: 13px 15px;
-    border: 1px solid #f0caca;
-    border-radius: 9px;
-    background: #fff7f7;
-    color: #b84b4b;
+    margin-top: 22px;
+    padding: 14px 16px;
+    border: 1px solid rgba(220, 53, 69, 0.17);
+    border-radius: 13px;
+    background: rgba(220, 53, 69, 0.055);
+    color: #b42332;
     font-size: 12px;
     line-height: 1.6;
+    animation: permissionErrorReveal 0.35s ease both;
 }
 
-.rp-error > i {
+.permission-error > i {
     margin-top: 2px;
-    font-size: 13px;
+    font-size: 14px;
 }
 
-.rp-form-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
-    padding: 24px;
+@keyframes permissionErrorReveal {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes permissionFormReveal {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

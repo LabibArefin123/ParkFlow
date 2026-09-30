@@ -1,4 +1,4 @@
-.rp-form-footer{
+.permission-form-footer{
     display:flex;
     align-items:center;
     justify-content:flex-end;
@@ -8,11 +8,11 @@
     background:#fcfdff;
 }
 
-.rp-form-footer .rp-primary-btn,
-.rp-form-footer .rp-secondary-btn{
+.permission-form-footer .permission-primary-btn,
+.permission-form-footer .permission-secondary-btn{
     min-width:115px;
 }
 
-.rp-form-footer .rp-primary-btn{
+.permission-form-footer .permission-primary-btn{
     min-width:155px;
 }

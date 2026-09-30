@@ -1,9 +1,9 @@
-.permission-form-footer {
+.permission-actions {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     gap: 10px;
-    margin-top: 27px;
+    margin-top: 26px;
     padding-top: 23px;
     border-top: 1px solid #edf0f5;
 }
@@ -32,7 +32,6 @@
     border: 1px solid #7c5cfc;
     background: linear-gradient(135deg, #7c5cfc, #6950df);
     color: #ffffff;
-    cursor: pointer;
     box-shadow: 0 8px 18px rgba(124, 92, 252, 0.2);
 }
 
@@ -64,7 +63,7 @@
 }
 
 .permission-primary-btn:hover i {
-    transform: rotate(-4deg) scale(1.05);
+    transform: translateX(2px);
 }
 
 .permission-secondary-btn:hover i {

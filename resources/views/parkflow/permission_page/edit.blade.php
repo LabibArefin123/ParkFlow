@@ -1,172 +1,130 @@
 @extends('parkflow.layouts.app')
 
-@section('title', 'Edit User')
+@section('title', 'Edit Permission')
 
 @push('styles')
-    <link rel="stylesheet" href="{{ asset('css/custom_backend/user_page/edit_page/user_header.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/custom_backend/user_page/edit_page/user_form.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/custom_backend/user_page/edit_page/user_fields.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/custom_backend/user_page/edit_page/user_roles.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/custom_backend/user_page/edit_page/user_footer.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/custom_backend/user_page/edit_page/user_resp.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/permission_page/edit_page/permission_header.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/permission_page/edit_page/permission_form.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/permission_page/edit_page/permission_fields.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/permission_page/edit_page/permission_info.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/permission_page/edit_page/permission_footer.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/permission_page/edit_page/permission_resp.css') }}">
 @endpush
 
 @section('content')
-    <div class="rp-page">
-        <div class="rp-header">
-            <div>
-                <div class="rp-eyebrow">
-                    <i class="fa-solid fa-user-pen"></i>
-                    User Management
+    <div class="permission-header">
+        <div>
+            <div class="permission-eyebrow"> <i class="fa-solid fa-key"></i>
+                Access Control </div>
+
+
+            <h1>Edit Permission</h1>
+
+            <p>Update this capability and keep ParkFlow access control organized.</p>
+        </div>
+
+        <a href="{{ route('permissions.index') }}" class="permission-secondary-btn">
+            <i class="fa-solid fa-arrow-left"></i>
+            Back
+        </a>
+    </div>
+
+    <div class="permission-form-panel">
+        <form action="{{ route('permissions.update', $permission) }}" method="POST">
+            @csrf
+            @method('PUT')
+
+            <div class="permission-form-header">
+                <div class="permission-form-icon permission-icon">
+                    <i class="fa-solid fa-pen-to-square"></i>
                 </div>
 
-                <h1>Edit User</h1>
-
-                <p>Update the account details and access role for this ParkFlow user.  </p>
+                <div>
+                    <h2>Permission Details</h2>
+                    <p>Modify the capability name or authentication guard.</p>
+                </div>
             </div>
 
-            <a href="{{ route('users.index') }}" class="rp-secondary-btn">
-                <i class="fa-solid fa-arrow-left"></i>
-                Back
-            </a>
-        </div>
-
-        <div class="rp-form-panel">
-            <form action="{{ route('users.update', $user) }}" method="POST">
-                @csrf
-                @method('PUT')
-                <div class="rp-form-header">
-                    <div class="rp-form-icon user-icon">
-                        <i class="fa-solid fa-user-pen"></i>
-                    </div>
+            @if ($errors->any())
+                <div class="permission-error">
+                    <i class="fa-solid fa-circle-exclamation"></i>
 
                     <div>
-                        <h2>User Details</h2>
-                        <p>Modify the user's profile information and assigned role. </p>
+                        @foreach ($errors->all() as $error)
+                            <div>{{ $error }}</div>
+                        @endforeach
                     </div>
                 </div>
+            @endif
 
-                @if ($errors->any())
-                    <div class="rp-error">
-                        <i class="fa-solid fa-circle-exclamation"></i>
+            <div class="permission-form-grid">
+                <div class="permission-field">
+                    <label for="name">
+                        Permission Name
+                        <span>*</span>
+                    </label>
 
-                        <div>
-                            @foreach ($errors->all() as $error)
-                                <div>{{ $error }}</div>
-                            @endforeach
-                        </div>
-                    </div>
-                @endif
+                    <div class="permission-input">
+                        <i class="fa-solid fa-key"></i>
 
-                <div class="rp-form-grid">
-                    <div class="rp-field">
-                        <label for="name">Full Name <span>*</span></label>
-
-                        <div class="rp-input">
-                            <i class="fa-solid fa-user"></i>
-
-                            <input type="text" id="name" name="name" value="{{ old('name', $user->name) }}"
-                                placeholder="e.g. Parking Operator">
-                        </div>
+                        <input type="text" id="name" name="name" value="{{ old('name', $permission->name) }}"
+                            placeholder="e.g. parking_spots.create" required>
                     </div>
 
-                    <div class="rp-field">
-                        <label for="email">Email Address <span>*</span> </label>
-                        <div class="rp-input">
-                            <i class="fa-solid fa-envelope"></i>
-
-                            <input type="email" id="email" name="email" value="{{ old('email', $user->email) }}"
-                                placeholder="e.g. operator@parkflow.test">
-                        </div>
-                    </div>
-
-                    <div class="rp-field">
-                        <label for="password"> New Password</label>
-
-                        <div class="rp-input">
-                            <i class="fa-solid fa-lock"></i>
-
-                            <input type="password" id="password" name="password"
-                                placeholder="Leave blank to keep current password">
-                        </div>
-
-                        <small>Leave this field empty if you do not want to change the password. </small>
-                    </div>
-
-                    <div class="rp-field">
-                        <label for="password_confirmation">Confirm New Password</label>
-                        <div class="rp-input">
-                            <i class="fa-solid fa-lock"></i>
-
-                            <input type="password" id="password_confirmation" name="password_confirmation"
-                                placeholder="Confirm new password">
-                        </div>
-                    </div>
+                    <small>
+                        Use a clear action-based permission name.
+                    </small>
                 </div>
 
-                <div class="rp-role-section">
-                    <div class="rp-role-header">
-                        <div>
-                            <h3>
-                                <i class="fa-solid fa-user-shield"></i>
-                                Assign Role
-                            </h3>
+                <div class="permission-field">
+                    <label for="guard_name">
+                        Guard Name
+                        <span>*</span>
+                    </label>
 
-                            <p>Select the access role this user should have. </p>
-                        </div>
+                    <div class="permission-input">
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                        <select id="guard_name" name="guard_name" required>
+                            <option value="web"
+                                {{ old('guard_name', $permission->guard_name) === 'web' ? 'selected' : '' }}>
+                                web
+                            </option>
+                        </select>
                     </div>
 
-                    <div class="rp-role-grid">
-                        @forelse ($roles as $role)
-                            <label class="rp-role-item">
+                    <small>
+                        ParkFlow uses the web authentication guard.
+                    </small>
+                </div>
+            </div>
 
-                                <input type="radio" name="role" value="{{ $role->name }}"
-                                    {{ old('role', optional($user->roles->first())->name) === $role->name ? 'checked' : '' }}>
-
-                                <span class="rp-role-check">
-                                    <i class="fa-solid fa-check"></i>
-                                </span>
-
-                                <span class="rp-role-content">
-                                    <strong>{{ $role->name }}</strong>
-
-                                    <small>
-                                        {{ $role->permissions_count ?? $role->permissions->count() }}
-                                        permissions
-                                    </small>
-                                </span>
-
-                            </label>
-                        @empty
-                            <div class="rp-empty rp-empty-small">
-                                <div class="rp-empty-icon">
-                                    <i class="fa-solid fa-user-shield"></i>
-                                </div>
-
-                                <h3>No roles available</h3>
-
-                                <p>Create a role before assigning access to this user.</p>
-
-                                <a href="{{ route('roles.create') }}" class="rp-primary-btn">
-                                    <i class="fa-solid fa-plus"></i>
-                                    Add Role
-                                </a>
-                            </div>
-                        @endforelse
-                    </div>
+            <div class="permission-info">
+                <div class="permission-info-icon">
+                    <i class="fa-solid fa-circle-info"></i>
                 </div>
 
-                <div class="rp-form-footer">
-                    <a href="{{ route('users.index') }}" class="rp-secondary-btn">
-                        Cancel
-                    </a>
-
-                    <button type="submit" class="rp-primary-btn">
-                        <i class="fa-solid fa-check"></i>
-                        Update User
-                    </button>
+                <div>
+                    <strong>Permission management</strong>
+                    <p>
+                        Changes to this permission may affect roles that currently use it.
+                        Review role assignments before making major changes.
+                    </p>
                 </div>
-            </form>
-        </div>
+            </div>
+
+            <div class="permission-form-footer">
+                <a href="{{ route('permissions.show', $permission) }}" class="permission-secondary-btn">
+                    <i class="fa-solid fa-eye"></i>
+                    View Permission
+                </a>
+
+                <button type="submit" class="permission-primary-btn">
+                    <i class="fa-solid fa-floppy-disk"></i>
+                    Update Permission
+                </button>
+            </div>
+        </form>
     </div>
+
 @endsection

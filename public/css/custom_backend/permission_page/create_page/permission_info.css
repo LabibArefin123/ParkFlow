@@ -1,8 +1,8 @@
-.rp-form-grid{
+.permission-form-grid{
     position:relative;
 }
 
-.rp-form-grid:after{
+.permission-form-grid:after{
     content:"";
     position:absolute;
     left:50%;
@@ -14,15 +14,15 @@
     pointer-events:none;
 }
 
-.rp-field{
+.permission-field{
     position:relative;
     z-index:1;
 }
 
-.rp-field:first-child{
+.permission-field:first-child{
     padding-right:10px;
 }
 
-.rp-field:last-child{
+.permission-field:last-child{
     padding-left:10px;
 }

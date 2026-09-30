@@ -1,81 +1,81 @@
 @media (max-width: 768px) {
-    .rp-page {
+    .permission-page {
         padding: 5px 0 25px;
     }
 
-    .rp-header {
+    .permission-header {
         align-items: flex-start;
         flex-direction: column;
         gap: 16px;
         margin-bottom: 20px;
     }
 
-    .rp-header h1 {
+    .permission-header h1 {
         font-size: 25px;
     }
 
-    .rp-header p {
+    .permission-header p {
         font-size: 13px;
     }
 
-    .rp-form-header {
+    .permission-form-header {
         padding: 18px;
     }
 
-    .rp-form-grid {
+    .permission-form-grid {
         grid-template-columns: 1fr;
         gap: 17px;
         padding: 18px;
     }
 
-    .rp-form-grid:after {
+    .permission-form-grid:after {
         display: none;
     }
 
-    .rp-field:first-child,
-    .rp-field:last-child {
+    .permission-field:first-child,
+    .permission-field:last-child {
         padding-right: 0;
         padding-left: 0;
     }
 
-    .rp-form-footer {
+    .permission-form-footer {
         align-items: stretch;
         flex-direction: column-reverse;
         padding: 16px 18px;
     }
 
-    .rp-form-footer .rp-primary-btn,
-    .rp-form-footer .rp-secondary-btn {
+    .permission-form-footer .permission-primary-btn,
+    .permission-form-footer .permission-secondary-btn {
         width: 100%;
     }
 }
 
 @media (max-width: 480px) {
-    .rp-header h1 {
+    .permission-header h1 {
         font-size: 22px;
     }
 
-    .rp-eyebrow {
+    .permission-eyebrow {
         font-size: 10px;
     }
 
-    .rp-form-icon {
+    .permission-form-icon {
         width: 42px;
         height: 42px;
         flex-basis: 42px;
         font-size: 15px;
     }
 
-    .rp-form-header h2 {
+    .permission-form-header h2 {
         font-size: 15px;
     }
 
-    .rp-form-header p {
+    .permission-form-header p {
         font-size: 11px;
     }
 
-    .rp-input input,
-    .rp-input select {
+    .permission-input input,
+    .permission-input select {
         height: 41px;
     }
 }
