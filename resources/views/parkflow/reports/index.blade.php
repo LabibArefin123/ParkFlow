@@ -1,6 +1,6 @@
 @extends('parkflow.layouts.app')
 
-@section('title', 'Reports')
+@section('title', 'Reports Page')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/custom_backend/report_page/report_base.css') }}">
@@ -35,30 +35,22 @@
 
             @if ($dailyRevenue->count())
                 <div class="daily-revenue-list">
-                    @php
-                        $maxRevenue = $dailyRevenue->max('revenue') ?: 1;
-                    @endphp
-
                     @foreach ($dailyRevenue as $day)
-                        @php
-                            $percentage = ($day->revenue / $maxRevenue) * 100;
-                        @endphp
-
                         <div class="daily-revenue-row">
                             <div class="daily-revenue-date">
-                                <strong>{{ Carbon\Carbon::parse($day->report_date)->format('d') }}</strong>
-                                <span>{{ Carbon\Carbon::parse($day->report_date)->format('M') }}</span>
+                                <strong>{{ $day->day }}</strong>
+                                <span>{{ $day->month }}</span>
                             </div>
 
                             <div class="daily-revenue-bar-wrapper">
                                 <div class="daily-revenue-bar">
-                                    <span style="width:{{ max($percentage, 3) }}%"></span>
+                                    <span style="width:{{ $day->bar_width }}%"></span>
                                 </div>
-                                <small>{{ number_format($day->transactions) }} transactions</small>
+                                <small>{{ $day->transactions }} transactions</small>
                             </div>
 
                             <div class="daily-revenue-amount">
-                                ৳{{ number_format($day->revenue, 2) }}
+                                ৳{{ $day->revenue }}
                             </div>
                         </div>
                     @endforeach
@@ -84,32 +76,17 @@
             </div>
 
             <div class="status-list">
-                <div class="status-row">
-                    <div>
-                        <span class="status-dot completed"></span>
-                        Completed
+                @foreach ($sessionStatusRows as $status)
+                    <div class="status-row">
+                        <div>
+                            <span class="status-dot {{ $status['class'] }}"></span>
+                            {{ $status['label'] }}
+                        </div>
+                        <strong>{{ $status['count'] }}</strong>
                     </div>
-                    <strong>{{ number_format($completedSessions) }}</strong>
-                </div>
-
-                <div class="status-row">
-                    <div>
-                        <span class="status-dot active"></span>
-                        Active
-                    </div>
-                    <strong>{{ number_format($activeSessions) }}</strong>
-                </div>
-
-                <div class="status-row">
-                    <div>
-                        <span class="status-dot cancelled"></span>
-                        Cancelled
-                    </div>
-                    <strong>{{ number_format($cancelledSessions) }}</strong>
-                </div>
+                @endforeach
             </div>
         </div>
-
     </div>
 
     <div class="report-content-grid">

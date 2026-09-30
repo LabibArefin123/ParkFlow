@@ -100,6 +100,44 @@ class ReportController extends Controller
             ->orderBy('report_date')
             ->get();
 
+        $maxRevenue = $dailyRevenue->max('revenue') ?: 1;
+
+        $dailyRevenue = $dailyRevenue->map(
+            function ($day) use ($maxRevenue) {
+                $date = Carbon::parse($day->report_date);
+
+                $percentage = ((float) $day->revenue / (float) $maxRevenue) * 100;
+
+                return (object) [
+                    'day' => $date->format('d'),
+                    'month' => $date->format('M'),
+                    'transactions' => number_format($day->transactions),
+                    'revenue' => number_format($day->revenue, 2),
+                    'bar_width' => max($percentage, 3),
+                ];
+            }
+        );
+
+
+        $sessionStatusRows = [
+            [
+                'label' => 'Completed',
+                'class' => 'completed',
+                'count' => number_format($completedSessions),
+            ],
+            [
+                'label' => 'Active',
+                'class' => 'active',
+                'count' => number_format($activeSessions),
+            ],
+            [
+                'label' => 'Cancelled',
+                'class' => 'cancelled',
+                'count' => number_format($cancelledSessions),
+            ],
+        ];
+
+
         $recentSessions = ParkingSession::with([
             'vehicle',
             'parkingSpot.parkingLocation',
@@ -126,6 +164,7 @@ class ReportController extends Controller
             'paymentMethods',
             'locationPerformance',
             'dailyRevenue',
+            'sessionStatusRows',
             'recentSessions'
         ));
     }
