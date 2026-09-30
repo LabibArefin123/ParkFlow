@@ -16,8 +16,6 @@
         <div>
             <div class="permission-eyebrow"> <i class="fa-solid fa-key"></i>
                 Access Control </div>
-
-
             <h1>Permission Details</h1>
 
             <p>Review the capability configuration and access-control information.</p>
@@ -38,12 +36,8 @@
 
                 <div>
                     <span class="permission-label">Permission</span>
-
                     <h2>{{ $permission->name }}</h2>
-
-                    <p>
-                        Capability ID #{{ $permission->id }}
-                    </p>
+                    <p>  Capability ID #{{ $permission->id }}  </p>
                 </div>
             </div>
 

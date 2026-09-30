@@ -17,9 +17,7 @@
             <div class="permission-eyebrow"> <i class="fa-solid fa-key"></i>
                 Access Control </div>
 
-
             <h1>Edit Permission</h1>
-
             <p>Update this capability and keep ParkFlow access control organized.</p>
         </div>
 
@@ -33,7 +31,6 @@
         <form action="{{ route('permissions.update', $permission) }}" method="POST">
             @csrf
             @method('PUT')
-
             <div class="permission-form-header">
                 <div class="permission-form-icon permission-icon">
                     <i class="fa-solid fa-pen-to-square"></i>
@@ -59,33 +56,22 @@
 
             <div class="permission-form-grid">
                 <div class="permission-field">
-                    <label for="name">
-                        Permission Name
-                        <span>*</span>
-                    </label>
-
+                    <label for="name"> Permission Name <span>*</span> </label>
                     <div class="permission-input">
                         <i class="fa-solid fa-key"></i>
 
                         <input type="text" id="name" name="name" value="{{ old('name', $permission->name) }}"
-                            placeholder="e.g. parking_spots.create" required>
+                            placeholder="e.g. parking_spots.create">
                     </div>
 
-                    <small>
-                        Use a clear action-based permission name.
-                    </small>
+                    <small> Use a clear action-based permission name.</small>
                 </div>
 
                 <div class="permission-field">
-                    <label for="guard_name">
-                        Guard Name
-                        <span>*</span>
-                    </label>
-
+                   <label for="guard_name"> Guard Name <span>*</span> </label>
                     <div class="permission-input">
                         <i class="fa-solid fa-shield-halved"></i>
-
-                        <select id="guard_name" name="guard_name" required>
+                        <select id="guard_name" name="guard_name">
                             <option value="web"
                                 {{ old('guard_name', $permission->guard_name) === 'web' ? 'selected' : '' }}>
                                 web
@@ -93,9 +79,7 @@
                         </select>
                     </div>
 
-                    <small>
-                        ParkFlow uses the web authentication guard.
-                    </small>
+                    <small> ParkFlow uses the web authentication guard.</small>
                 </div>
             </div>
 
@@ -126,5 +110,4 @@
             </div>
         </form>
     </div>
-
 @endsection

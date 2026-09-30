@@ -1,6 +1,8 @@
 @extends('parkflow.layouts.app')
 
-@section('content')
+@section('title', 'My Profile')
+
+@push('styles')
     <link rel="stylesheet" href="{{ asset('css/custom_backend/profile_page/profile_base.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom_backend/profile_page/profile_header.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom_backend/profile_page/profile_card.css') }}">
@@ -8,6 +10,9 @@
     <link rel="stylesheet" href="{{ asset('css/custom_backend/profile_page/profile_form.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom_backend/profile_page/profile_security.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom_backend/profile_page/profile_responsive.css') }}">
+@endpush
+
+@section('content')
     <div class="parkflow-profile-page"> {{-- PAGE HEADER --}} <div class="profile-page-header">
             <div> <span class="profile-eyebrow"> <i class="fa-solid fa-user-shield"></i> Account Settings </span>
                 <h1>My Profile</h1>
