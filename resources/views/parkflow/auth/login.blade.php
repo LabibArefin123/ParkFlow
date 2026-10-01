@@ -190,7 +190,7 @@
 
         </section>
     </main>
-
+    
     <script src="{{ asset('js/parkflow/auth/login_detect_init.js') }}"></script>
     <script src="{{ asset('js/parkflow/auth/login_detect_notification.js') }}"></script>
     <script src="{{ asset('js/parkflow/auth/login_detect_email.js') }}"></script>

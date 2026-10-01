@@ -39,7 +39,9 @@ document.addEventListener("DOMContentLoaded", function () {
         state: {
             hasInteracted: false,
             emailVerified: false,
+            emailAccountExists: false,
             passwordReady: false,
+            passwordVerified: false,
         },
     };
 

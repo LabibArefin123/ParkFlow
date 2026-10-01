@@ -1,18 +1,33 @@
 window.addEventListener("parkflowLoginReady", function () {
     const login = window.ParkFlowLogin;
 
-    const { loginForm } = login.elements;
+    const { loginForm, notification } = login.elements;
 
     const { infoSvg } = login.icons;
 
-    loginForm?.addEventListener("submit", function (event) {
+    loginForm?.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
         const emailValid = login.validateEmail();
 
-        const passwordValid = login.validatePassword();
+        if (!emailValid) {
+            return;
+        }
 
-        if (!emailValid || !passwordValid) {
-            event.preventDefault();
+        if (!login.state.emailAccountExists) {
+            login.showNotification(
+                "error",
+                "Email Not Found",
+                "Please enter a registered email address.",
+                login.icons.sadSvg,
+            );
 
+            return;
+        }
+
+        const passwordValid = await login.validatePassword();
+
+        if (!passwordValid) {
             return;
         }
 
@@ -24,14 +39,19 @@ window.addEventListener("parkflowLoginReady", function () {
             "Verifying your credentials securely...",
             infoSvg,
         );
+
+        /*
+         * Now submit the actual Laravel login form.
+         */
+        loginForm.submit();
     });
 
     login.showNotification(
-        login.elements.notification.dataset.type || "default",
+        notification.dataset.type || "default",
 
         "Welcome to ParkFlow 🚗",
 
-        login.elements.notification.dataset.message ||
+        notification.dataset.message ||
             "Enter your account details to continue.",
 
         infoSvg,

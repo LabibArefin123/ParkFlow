@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
@@ -51,13 +52,42 @@ class AuthController extends Controller
     public function checkEmail(Request $request)
     {
         $request->validate([
-            'email' => ['required', 'email']
+            'email' => ['required', 'email'],
         ]);
 
-        $exists = User::where('email', $request->email)->exists();
+        $user = User::where('email', $request->email)->first();
 
         return response()->json([
-            'verified' => $exists
+            'verified' => (bool) $user,
+        ]);
+    }
+
+    public function checkPassword(Request $request)
+    {
+        $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required', 'string'],
+        ]);
+
+        $user = User::where('email', $request->email)->first();
+
+        if (!$user) {
+            return response()->json([
+                'verified' => false,
+                'message' => 'The email address is not registered.',
+            ]);
+        }
+
+        $verified = Hash::check(
+            $request->password,
+            $user->password
+        );
+
+        return response()->json([
+            'verified' => $verified,
+            'message' => $verified
+                ? 'Password verified successfully.'
+                : 'The password is incorrect.',
         ]);
     }
 

@@ -10,6 +10,9 @@ window.addEventListener("parkflowLoginReady", function () {
     emailInput.addEventListener("input", function () {
         clearTimeout(login.timers.emailCheck);
 
+        login.state.emailAccountExists = false;
+        login.state.passwordVerified = false;
+
         const email = this.value.trim();
 
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -43,13 +46,17 @@ window.addEventListener("parkflowLoginReady", function () {
                 const result = await response.json();
 
                 if (result.verified) {
+                    login.state.emailAccountExists = true;
+
                     login.showNotification(
                         "success",
-                        "Email Verified",
+                        "Email Verified 😊",
                         "Your email is registered in ParkFlow.",
                         login.icons.happySvg,
                     );
                 } else {
+                    login.state.emailAccountExists = false;
+
                     login.showNotification(
                         "error",
                         "Email Not Found",
