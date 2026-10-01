@@ -39,7 +39,7 @@ class RevenueController extends Controller
             $query->whereDate('paid_at', $request->date);
         }
 
-        $payments = $query->paginate(15)->withQueryString();
+        $payments = $query->paginate(10)->withQueryString();
 
         $payments->getCollection()->transform(function ($payment) {
             $method = strtolower($payment->payment_method ?? '');
