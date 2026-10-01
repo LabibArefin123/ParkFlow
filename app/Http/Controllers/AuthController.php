@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -13,7 +14,10 @@ class AuthController extends Controller
             return redirect()->route('dashboard');
         }
 
-        return view('parkflow.auth.login');
+        return view('parkflow.auth.login', [
+            'notificationType' => 'default',
+            'notificationMessage' => 'Welcome to ParkFlow! 🚗 Please enter your login details.',
+        ]);
     }
 
     public function login(Request $request)
@@ -42,6 +46,19 @@ class AuthController extends Controller
             ->withErrors([
                 'email' => 'The email or password you entered is incorrect.',
             ]);
+    }
+
+    public function checkEmail(Request $request)
+    {
+        $request->validate([
+            'email' => ['required', 'email']
+        ]);
+
+        $exists = User::where('email', $request->email)->exists();
+
+        return response()->json([
+            'verified' => $exists
+        ]);
     }
 
     public function logout(Request $request)

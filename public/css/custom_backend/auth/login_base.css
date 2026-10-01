@@ -11,8 +11,8 @@ body {
 body {
     margin: 0;
     font-family: "Inter", sans-serif;
-    background: #f8fafc;
     color: #0f172a;
+    background: #f1f5f9;
 }
 
 .parkflow-login {
@@ -21,17 +21,17 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 30px 20px;
+    padding: 38px;
     overflow: hidden;
     background:
         radial-gradient(
             circle at 10% 10%,
             rgba(37, 99, 235, 0.08),
-            transparent 30%
+            transparent 32%
         ),
         radial-gradient(
             circle at 90% 90%,
-            rgba(59, 130, 246, 0.07),
+            rgba(59, 130, 246, 0.08),
             transparent 32%
         ),
         #f8fafc;
@@ -40,25 +40,106 @@ body {
 .parkflow-login-card {
     position: relative;
     z-index: 2;
-    width: 100%;
-    max-width: 450px;
-    padding: 34px;
+    width: min(100%, 1120px);
+    min-height: 650px;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    overflow: hidden;
     border: 1px solid rgba(226, 232, 240, 0.9);
-    border-radius: 24px;
-    background: rgba(255, 255, 255, 0.92);
+    border-radius: 28px;
+    background: #fff;
     box-shadow:
-        0 30px 80px rgba(15, 23, 42, 0.1),
-        0 8px 30px rgba(15, 23, 42, 0.05);
-    backdrop-filter: blur(18px);
+        0 35px 90px rgba(15, 23, 42, 0.12),
+        0 8px 25px rgba(15, 23, 42, 0.04);
+    animation: loginCardEnter 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
-@media (max-width: 520px) {
-    .parkflow-login {
-        padding: 20px 14px;
-    }
+.login-brand-panel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 52px 54px 38px;
+    overflow: hidden;
+    color: #fff;
+    background: linear-gradient(145deg, #102b55 0%, #164a91 55%, #2563eb 100%);
+}
 
+.login-form-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 54px 64px;
+    background: #fff;
+}
+
+.login-form-inner {
+    width: 100%;
+    max-width: 390px;
+}
+
+@keyframes loginCardEnter {
+    from {
+        opacity: 0;
+        transform: translateY(24px) scale(0.985);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 900px) {
+    .parkflow-login {
+        padding: 22px;
+    }
     .parkflow-login-card {
-        padding: 27px 21px;
-        border-radius: 20px;
+        grid-template-columns: 0.9fr 1.1fr;
+    }
+    .login-brand-panel {
+        padding: 40px 32px 30px;
+    }
+    .login-form-panel {
+        padding: 42px 32px;
+    }
+}
+
+@media (max-width: 680px) {
+    .parkflow-login {
+        min-height: 100svh;
+        padding: 14px;
+    }
+    .parkflow-login-card {
+        width: 100%;
+        min-height: auto;
+        grid-template-columns: 1fr;
+        border-radius: 22px;
+    }
+    .login-brand-panel {
+        padding: 27px 25px 24px;
+    }
+    .login-brand-content {
+        padding: 36px 0 25px;
+    }
+    .login-brand-content h1 {
+        font-size: 28px;
+    }
+    .login-feature-list {
+        display: none;
+    }
+    .login-brand-bottom {
+        margin-top: 8px;
+    }
+    .login-form-panel {
+        padding: 34px 25px 28px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
     }
 }

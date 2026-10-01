@@ -208,3 +208,75 @@
 .parkflow-login-button:hover i {
     transform: translateX(3px);
 }
+
+.login-form-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.login-form-icon {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #e2e8f0;
+    border-radius: 15px;
+    background: #fff;
+    color: #2563eb;
+    font-size: 18px;
+    box-shadow: 0 5px 16px rgba(15, 23, 42, 0.05);
+}
+
+.login-secure-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #64748b;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.login-secure-label i {
+    color: #16a34a;
+}
+
+.login-form-eyebrow {
+    color: #2563eb;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+}
+
+.parkflow-login-heading {
+    margin-bottom: 27px;
+}
+
+.parkflow-login-heading h2 {
+    margin: 9px 0 8px;
+    color: #0f172a;
+    font-size: 31px;
+    font-weight: 800;
+    letter-spacing: -0.045em;
+}
+
+.parkflow-login-heading p {
+    margin: 0;
+    color: #64748b;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.login-input-icon {
+    width: 45px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.login-input {
+    background: #fff;
+}

@@ -1,94 +1,145 @@
-.parkflow-login-brand {
+.login-brand-top {
+    position: relative;
+    z-index: 2;
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 30px;
+    gap: 13px;
 }
 
 .parkflow-login-logo {
-    width: 46px;
-    height: 46px;
+    width: 52px;
+    height: 52px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
     overflow: hidden;
-    border-radius: 13px;
-    color: #fff;
-    box-shadow: 0 8px 20px rgba(30, 58, 138, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    background: #fff;
+    color: #1d4ed8;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
 }
 
 .parkflow-login-logo img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    padding: 5px;
+    background: #fff;
 }
 
 .parkflow-login-logo i {
-    font-size: 21px;
+    font-size: 23px;
 }
 
 .parkflow-login-brand-text {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 4px;
 }
 
 .parkflow-login-brand-text strong {
-    color: #0f172a;
-    font-size: 17px;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-}
-
-.parkflow-login-brand-text span {
-    color: #94a3b8;
-    font-size: 10px;
-    font-weight: 600;
-}
-
-.parkflow-login-heading {
-    margin-bottom: 25px;
-}
-
-.parkflow-login-eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    margin-bottom: 9px;
-    color: #2563eb;
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-}
-
-.parkflow-login-eyebrow i {
-    font-size: 10px;
-}
-
-.parkflow-login-heading h1 {
-    margin: 0;
-    color: #0f172a;
-    font-size: 29px;
+    color: #fff;
+    font-size: 21px;
     font-weight: 800;
     letter-spacing: -0.04em;
 }
 
-.parkflow-login-heading p {
-    max-width: 360px;
-    margin: 8px 0 0;
-    color: #64748b;
-    font-size: 12px;
-    line-height: 1.7;
+.parkflow-login-brand-text span {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 10px;
+    font-weight: 600;
 }
 
-@media (max-width: 520px) {
-    .parkflow-login-brand {
-        margin-bottom: 25px;
-    }
+.login-brand-content {
+    position: relative;
+    z-index: 2;
+    max-width: 470px;
+    padding: 20px 0;
+}
 
-    .parkflow-login-heading h1 {
-        font-size: 26px;
-    }
+.login-brand-content h1 {
+    margin: 25px 0 15px;
+    color: #fff;
+    font-size: clamp(34px, 4vw, 20px);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.055em;
+}
+
+.login-brand-content h1 span {
+    color: #93c5fd;
+}
+
+.login-brand-content > p {
+    max-width: 420px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.login-feature-list {
+    display: grid;
+    gap: 19px;
+    margin-top: 36px;
+}
+
+.login-feature {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.login-feature > span {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 13px;
+    background: rgba(255, 255, 255, 0.11);
+    color: #bfdbfe;
+    font-size: 15px;
+}
+
+.login-feature div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.login-feature strong {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.login-feature small {
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 10px;
+}
+
+.login-brand-bottom {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.login-brand-bottom span:first-child {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.login-brand-bottom i {
+    color: #4ade80;
+    font-size: 6px;
 }
