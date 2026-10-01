@@ -57,7 +57,7 @@ class ReportController extends Controller
             ->whereBetween('entry_time', [$from, $to])
             ->get()
             ->groupBy(function ($session) {
-                return ucfirst($session->vehicle?->type ?? 'Unknown');
+                return ucfirst($session->vehicle?->vehicle_type ?? 'Unknown');
             })
             ->map(function ($sessions) {
                 return $sessions->count();
