@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ $title ?? 'ParkFlow' }}</title>
+    <title>@yield('title', 'ParkFlow') | ParkFlow</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,10 +24,14 @@
     <link rel="stylesheet" href="{{ asset('css/custom_backend/global_layout/global_layout.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom_backend/global_layout/global_image.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom_backend/global_layout/global_footer.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/custom_backend/global_layout/global_sidebar/global_sidebar_base.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/custom_backend/global_layout/global_sidebar/global_sidebar_menu.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/custom_backend/global_layout/global_sidebar/global_sidebar_footer.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/custom_backend/global_layout/global_sidebar/global_sidebar_layout.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('css/custom_backend/global_layout/global_sidebar/global_sidebar_base.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('css/custom_backend/global_layout/global_sidebar/global_sidebar_menu.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('css/custom_backend/global_layout/global_sidebar/global_sidebar_footer.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('css/custom_backend/global_layout/global_sidebar/global_sidebar_layout.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom_backend/global_layout/global_resp.css') }}">
 
     {{-- Notification CSS --}}
@@ -38,7 +42,7 @@
     @stack('styles')
 </head>
 
-<body>
+<body data-page-title="@yield('title', 'ParkFlow')">
     <div class="parkflow-app">
         {{-- Mobile Sidebar Overlay --}}
         @include('parkflow.partials.mobile_sidebar')
@@ -69,52 +73,9 @@
     {{-- Page Scripts --}}
     @stack('scripts')
     {{-- Sidebar Behaviour --}}
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const sidebar = document.getElementById('parkflowSidebar');
-            const overlay = document.getElementById('parkflowSidebarOverlay');
-            const toggle = document.getElementById('parkflowSidebarToggle');
-            const close = document.getElementById('parkflowSidebarClose');
-
-            function openSidebar() {
-                if (sidebar) sidebar.classList.add('open');
-                if (overlay) overlay.classList.add('show');
-                document.body.classList.add('sidebar-open');
-            }
-
-            function closeSidebar() {
-                if (sidebar) sidebar.classList.remove('open');
-                if (overlay) overlay.classList.remove('show');
-                document.body.classList.remove('sidebar-open');
-            }
-
-            if (toggle) {
-                toggle.addEventListener('click', openSidebar);
-            }
-
-            if (close) {
-                close.addEventListener('click', closeSidebar);
-            }
-
-            if (overlay) {
-                overlay.addEventListener('click', closeSidebar);
-            }
-
-            document.querySelectorAll('.parkflow-sidebar-link').forEach(function(link) {
-                link.addEventListener('click', function() {
-                    if (window.innerWidth <= 768) {
-                        closeSidebar();
-                    }
-                });
-            });
-
-            window.addEventListener('resize', function() {
-                if (window.innerWidth > 768) {
-                    closeSidebar();
-                }
-            });
-        });
-    </script>
+    <script src="{{ asset('js/parkflow/sidebar_function.js') }}"></script>
+    {{-- Dynamic Page Title --}}
+    <script src="{{ asset('js/parkflow/title_load.js') }}"></script>
 </body>
 
 </html>
