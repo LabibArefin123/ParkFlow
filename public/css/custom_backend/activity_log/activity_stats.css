@@ -1,0 +1,112 @@
+.activity-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 17px;
+    margin-top: 22px;
+}
+
+.activity-stat-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-width: 0;
+    padding: 21px 19px;
+    border-radius: 17px;
+    background: #fff;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    animation: activityStatIn 0.55s ease both;
+}
+
+.activity-stat-card:nth-child(2) {
+    animation-delay: 0.07s;
+}
+.activity-stat-card:nth-child(3) {
+    animation-delay: 0.14s;
+}
+.activity-stat-card:nth-child(4) {
+    animation-delay: 0.21s;
+}
+
+.activity-stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(24, 39, 75, 0.09);
+}
+
+.activity-stat-icon {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    border-radius: 15px;
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.activity-stat-card:hover .activity-stat-icon {
+    transform: rotate(-7deg) scale(1.06);
+}
+
+.stat-blue {
+    background: #eaf2ff;
+    color: #2563eb;
+}
+.stat-green {
+    background: #e9f9f0;
+    color: #16a34a;
+}
+.stat-purple {
+    background: #f2edff;
+    color: #8b5cf6;
+}
+.stat-orange {
+    background: #fff3e7;
+    color: #ea580c;
+}
+
+.activity-stat-info {
+    min-width: 0;
+}
+
+.activity-stat-info span {
+    display: block;
+    color: #7c8799;
+    font-size: 11px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.activity-stat-info h3 {
+    color: #18243a;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -0.7px;
+    line-height: 1.1;
+    margin: 0 0 6px;
+}
+
+.activity-stat-info small {
+    display: block;
+    color: #a0a9b8;
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+.activity-stat-info .activity-status-text {
+    color: #16a34a;
+    font-size: 19px;
+    letter-spacing: -0.4px;
+}
+
+@keyframes activityStatIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

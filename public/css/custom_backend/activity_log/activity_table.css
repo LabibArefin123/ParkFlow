@@ -1,0 +1,128 @@
+.activity-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #edf0f5;
+    border-radius: 14px;
+}
+
+.activity-table {
+    width: 100%;
+    min-width: 650px;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.activity-table thead th {
+    padding: 15px 17px;
+    background: #f8faff;
+    color: #8490a3;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.65px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    border-bottom: 1px solid #edf0f5;
+}
+
+.activity-table tbody td {
+    padding: 16px 17px;
+    border-bottom: 1px solid #f0f2f6;
+    vertical-align: middle;
+    transition: background 0.2s ease;
+}
+
+.activity-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.activity-table tbody tr:hover td {
+    background: #fbfdff;
+}
+
+.activity-device {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.activity-device-icon {
+    width: 39px;
+    height: 39px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: #eff6ff;
+    color: #2563eb;
+    font-size: 15px;
+}
+
+.activity-device strong {
+    display: block;
+    color: #344156;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.activity-device small,
+.activity-date {
+    display: block;
+    color: #9aa5b5;
+    font-size: 10px;
+    margin-top: 5px;
+}
+
+.activity-ip {
+    color: #536176;
+    font-size: 11px;
+    font-weight: 600;
+    font-family: monospace;
+}
+
+.activity-last-seen {
+    color: #344156;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.activity-session-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 11px;
+    border-radius: 30px;
+    font-size: 10px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.activity-session-badge span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.activity-session-badge.current {
+    background: #eafaf1;
+    color: #15803d;
+}
+.activity-session-badge.current span {
+    background: #22c55e;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.12);
+}
+.activity-session-badge.active {
+    background: #eff6ff;
+    color: #2563eb;
+}
+.activity-session-badge.active span {
+    background: #60a5fa;
+}
+
+.table-empty {
+    padding: 38px 15px;
+}
+.table-empty > i {
+    color: #94a3b8;
+    font-size: 25px;
+    margin-bottom: 12px;
+}

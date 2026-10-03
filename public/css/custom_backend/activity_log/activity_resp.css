@@ -1,0 +1,107 @@
+@media (max-width: 1199px) {
+    .activity-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .activity-header-visual {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .activity-header {
+        min-height: auto;
+        padding: 27px 23px;
+        border-radius: 18px;
+    }
+
+    .activity-header-visual {
+        display: none;
+    }
+
+    .activity-header h1 {
+        font-size: 25px;
+    }
+
+    .activity-header-content > p {
+        font-size: 12px;
+    }
+
+    .activity-header-meta {
+        gap: 12px;
+    }
+
+    .activity-header-meta span {
+        font-size: 10px;
+    }
+
+    .activity-stats {
+        gap: 11px;
+    }
+
+    .activity-stat-card {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px 14px;
+        border-radius: 14px;
+    }
+
+    .activity-stat-icon {
+        width: 39px;
+        height: 39px;
+        border-radius: 12px;
+        font-size: 15px;
+    }
+
+    .activity-stat-info h3 {
+        font-size: 21px;
+    }
+
+    .activity-stat-info .activity-status-text {
+        font-size: 16px;
+    }
+
+    .activity-panel {
+        padding: 19px 15px;
+        border-radius: 16px;
+    }
+
+    .activity-panel-heading h2 {
+        font-size: 17px;
+    }
+
+    .activity-timeline-top {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .activity-event-time {
+        white-space: normal;
+    }
+
+    .activity-footer-note {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 380px) {
+    .activity-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .activity-stat-card {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .parkflow-activity *,
+    .parkflow-activity *::before,
+    .parkflow-activity *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

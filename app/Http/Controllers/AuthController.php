@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Spatie\Activitylog\Models\Activity;
 use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
@@ -32,6 +33,14 @@ class AuthController extends Controller
             'remember' => ['nullable', 'boolean'],
         ]);
         $remember = $request->boolean('remember');
+        activity()
+            ->causedBy(Auth::user())
+            ->withProperties([
+                'ip_address' => $request->ip(),
+                'user_agent' => $request->userAgent(),
+                'session_id' => $request->session()->getId(),
+            ])
+            ->log('User logged in');
         if (Auth::attempt([
             'email' => $credentials['email'],
             'password' => $credentials['password'],
@@ -39,6 +48,7 @@ class AuthController extends Controller
             $request->session()->regenerate();
             return redirect()->intended(route('dashboard'))->with('success', 'Welcome back to ParkFlow.');
         }
+
         return back()
             ->withInput($request->only('email', 'remember'))
             ->withErrors(['email' => 'The email or password you entered is incorrect.'])
@@ -71,6 +81,13 @@ class AuthController extends Controller
     }
     public function logout(Request $request)
     {
+        activity()
+            ->causedBy(Auth::user())
+            ->withProperties([
+                'ip_address' => $request->ip(),
+                'user_agent' => $request->userAgent(),
+            ])
+            ->log('User logged out');
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();

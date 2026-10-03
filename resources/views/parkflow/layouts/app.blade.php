@@ -20,6 +20,8 @@
     {{-- Global Layout CSS --}}
     <link rel="stylesheet" href="{{ asset('css/custom_backend/global_layout/global_base.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom_backend/global_layout/global_navbar.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/global_layout/navbar_dropdown.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_backend/global_layout/navbar_dropdown_responsive.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom_backend/global_layout/global_user.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom_backend/global_layout/global_layout.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom_backend/global_layout/global_image.css') }}">
@@ -76,6 +78,8 @@
     <script src="{{ asset('js/parkflow/sidebar_function.js') }}"></script>
     {{-- Dynamic Page Title --}}
     <script src="{{ asset('js/parkflow/title_load.js') }}"></script>
+    {{-- Navbar Dropdown Part --}}
+    <script src="{{ asset('js/parkflow/navbar_dropdown.js') }}"></script>
 </body>
 
 </html>
