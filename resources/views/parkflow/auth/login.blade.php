@@ -24,12 +24,6 @@
 
 <body>
 
-    @php
-        $notificationType = session('success') ? 'success' : ($errors->any() ? 'error' : 'default');
-        $notificationMessage =
-            session('success') ??
-            ($errors->any() ? $errors->first() : 'Welcome to ParkFlow. Sign in to access your parking dashboard.');
-    @endphp
 
     <div class="login-notification" id="loginNotification" data-type="{{ $notificationType }}"
         data-message="{{ $notificationMessage }}" role="status" aria-live="polite">
@@ -193,13 +187,17 @@
 
     <script src="{{ asset('js/parkflow/auth/login_detect_init.js') }}"></script>
     <script src="{{ asset('js/parkflow/auth/login_detect_notification.js') }}"></script>
+    {{-- To Detect Email Part --}}
     <script src="{{ asset('js/parkflow/auth/login_detect_email.js') }}"></script>
+    {{-- To Detect Password Part --}}
+    <script src="{{ asset('js/parkflow/auth/login_detect_password.js') }}"></script>
+    {{-- Start of Login Validation Part --}}
     <script src="{{ asset('js/parkflow/auth/login_detect_validation.js') }}"></script>
     <script src="{{ asset('js/parkflow/auth/login_detect_field_events.js') }}"></script>
     <script src="{{ asset('js/parkflow/auth/login_detect_email_validation.js') }}"></script>
     <script src="{{ asset('js/parkflow/auth/login_detect_password_validation.js') }}"></script>
+    {{-- End of Login Validation Part --}}
     <script src="{{ asset('js/parkflow/auth/login_detect_form.js') }}"></script>
-    <script src="{{ asset('js/parkflow/auth/login_detect_password.js') }}"></script>
 </body>
 
 </html>

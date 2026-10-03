@@ -50,7 +50,7 @@ window.addEventListener("parkflowLoginReady", function () {
 
                     login.showNotification(
                         "success",
-                        "Email Verified 😊",
+                        "Email Verified ",
                         "Your email is registered in ParkFlow.",
                         login.icons.happySvg,
                     );

@@ -88,7 +88,7 @@ window.addEventListener("parkflowLoginReady", function () {
             login.state.passwordVerified = true;
             login.showNotification(
                 "success",
-                "Password Verified 😊",
+                "Password Verified",
                 "Your password matches your ParkFlow account.",
                 happySvg,
             );

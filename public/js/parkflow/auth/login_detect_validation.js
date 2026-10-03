@@ -7,7 +7,7 @@ window.addEventListener("parkflowLoginReady", function () {
             if (field === "email" && login.state.emailVerified) {
                 login.showNotification(
                     "success",
-                    "Email Verified 😊",
+                    "Email Verified",
                     "Your email has been checked successfully!",
                     happySvg,
                 );
@@ -15,7 +15,7 @@ window.addEventListener("parkflowLoginReady", function () {
             if (field === "password" && login.state.passwordVerified) {
                 login.showNotification(
                     "success",
-                    "Password Verified 😊",
+                    "Password Verified",
                     "Your password matches your account.",
                     happySvg,
                 );
