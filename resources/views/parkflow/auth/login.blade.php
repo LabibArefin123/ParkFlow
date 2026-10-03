@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
+    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
     <link rel="stylesheet" href="{{ asset('css/custom_backend/auth/login_base.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom_backend/auth/login_background.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom_backend/auth/login_header.css') }}">
@@ -150,8 +151,8 @@
                             <label for="password">Password</label>
                             <div class="login-input">
                                 <span class="login-input-icon"><i class="fa-solid fa-lock"></i></span>
-                                <input type="password" id="password" name="password" placeholder="Enter your password"
-                                    autocomplete="current-password" required>
+                                <input type="password" id="password" name="password"
+                                    placeholder="Enter your password" autocomplete="current-password" required>
                                 <button type="button" class="password-toggle" id="passwordToggle"
                                     aria-label="Show password">
                                     <i class="fa-regular fa-eye"></i>

@@ -32,29 +32,43 @@ class AuthController extends Controller
             'password' => ['required', 'string'],
             'remember' => ['nullable', 'boolean'],
         ]);
+
         $remember = $request->boolean('remember');
-        activity()
-            ->causedBy(Auth::user())
-            ->withProperties([
-                'ip_address' => $request->ip(),
-                'user_agent' => $request->userAgent(),
-                'session_id' => $request->session()->getId(),
-            ])
-            ->log('User logged in');
+
         if (Auth::attempt([
             'email' => $credentials['email'],
             'password' => $credentials['password'],
         ], $remember)) {
+
             $request->session()->regenerate();
-            return redirect()->intended(route('dashboard'))->with('success', 'Welcome back to ParkFlow.');
+
+            $user = Auth::user();
+
+            activity()
+                ->causedBy($user)
+                ->performedOn($user)
+                ->withProperties([
+                    'ip_address' => $request->ip(),
+                    'user_agent' => $request->userAgent(),
+                    'session_id' => $request->session()->getId(),
+                    'login_time' => now()->toDateTimeString(),
+                ])
+                ->log('User logged in');
+
+            return redirect()
+                ->intended(route('dashboard'))
+                ->with('success', 'Welcome back to ParkFlow.');
         }
 
         return back()
             ->withInput($request->only('email', 'remember'))
-            ->withErrors(['email' => 'The email or password you entered is incorrect.'])
+            ->withErrors([
+                'email' => 'The email or password you entered is incorrect.',
+            ])
             ->with('login_notification_type', 'error')
             ->with('login_notification_message', 'Your email or password does not match. Please try again.');
     }
+    
     public function checkEmail(Request $request)
     {
         $validated = $request->validate([
