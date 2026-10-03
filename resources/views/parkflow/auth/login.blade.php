@@ -190,11 +190,14 @@
 
         </section>
     </main>
-    
+
     <script src="{{ asset('js/parkflow/auth/login_detect_init.js') }}"></script>
     <script src="{{ asset('js/parkflow/auth/login_detect_notification.js') }}"></script>
     <script src="{{ asset('js/parkflow/auth/login_detect_email.js') }}"></script>
     <script src="{{ asset('js/parkflow/auth/login_detect_validation.js') }}"></script>
+    <script src="{{ asset('js/parkflow/auth/login_detect_field_events.js') }}"></script>
+    <script src="{{ asset('js/parkflow/auth/login_detect_email_validation.js') }}"></script>
+    <script src="{{ asset('js/parkflow/auth/login_detect_password_validation.js') }}"></script>
     <script src="{{ asset('js/parkflow/auth/login_detect_form.js') }}"></script>
     <script src="{{ asset('js/parkflow/auth/login_detect_password.js') }}"></script>
 </body>
