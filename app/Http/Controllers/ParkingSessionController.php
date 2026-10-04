@@ -23,19 +23,16 @@ class ParkingSessionController extends Controller
         if ($request->filled('search')) {
             $search = $request->search;
 
-            // $query->where(function ($q) use ($search) {
-            //     $q->whereHas('vehicle', function ($vehicle) use ($search) {
-            //         $vehicle->where('registration_number', 'like', "%{$search}%");
-            //     })
-            //         ->orWhereHas('customer', function ($customer) use ($search) {
-            //             $customer->where('name', 'like', "%{$search}%")
-            //                 ->orWhere('phone', 'like', "%{$search}%");
-            //         })
-            //         ->orWhere('entry_gate', 'like', "%{$search}%");
-            // });
+            $query->where(function ($q) use ($search) {
+                $q->whereHas('vehicle', function ($vehicle) use ($search) {
+                    $vehicle->where('registration_number', 'like', "%{$search}%");
+                })
+                  
+                    ->orWhere('entry_gate', 'like', "%{$search}%");
+            });
         }
 
-        $parkingSessions = $query->paginate(12)->withQueryString();
+        $parkingSessions = $query->paginate(10)->withQueryString();
 
         $stats = [
             'total' => ParkingSession::count(),
