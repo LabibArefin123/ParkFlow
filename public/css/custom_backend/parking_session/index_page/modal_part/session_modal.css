@@ -1,0 +1,79 @@
+.session-clickable-row {
+    cursor: pointer;
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.session-clickable-row:hover {
+    background: #f5f8ff !important;
+}
+
+.session-clickable-row:focus-within {
+    outline: 2px solid #93c5fd;
+    outline-offset: -2px;
+}
+
+.session-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.session-modal.is-open {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.session-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.62);
+    backdrop-filter: blur(7px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.session-modal.is-open .session-modal-backdrop {
+    opacity: 1;
+}
+
+.session-modal-dialog {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1200px;
+    max-height: min(88vh, 900px);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: 24px;
+    box-shadow: 0 30px 90px rgba(15, 23, 42, 0.28);
+    transform: translateY(28px) scale(0.97);
+    opacity: 0;
+    transition:
+        transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+        opacity 0.3s ease;
+}
+
+.session-modal.is-open .session-modal-dialog {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+body.session-modal-active {
+    overflow: hidden;
+}

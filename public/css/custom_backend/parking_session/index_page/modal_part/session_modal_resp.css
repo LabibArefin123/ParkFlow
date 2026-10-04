@@ -1,0 +1,56 @@
+@media (max-width: 640px) {
+    .session-modal {
+        align-items: flex-end;
+        padding: 0;
+    }
+
+    .session-modal-dialog {
+        max-height: 92vh;
+        border-radius: 22px 22px 0 0;
+        transform: translateY(50px);
+    }
+
+    .session-modal-header {
+        padding: 20px;
+    }
+
+    .session-modal-icon {
+        width: 45px;
+        height: 45px;
+        border-radius: 14px;
+        font-size: 19px;
+    }
+
+    .session-modal-header h2 {
+        font-size: 18px;
+    }
+
+    .session-modal-body {
+        padding: 20px;
+    }
+
+    .session-modal-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .session-modal-footer {
+        padding: 15px 20px;
+    }
+
+    .session-modal-dismiss,
+    .session-modal-view {
+        flex: 1;
+        padding: 0 10px;
+        font-size: 11px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .session-modal,
+    .session-modal-dialog,
+    .session-modal-backdrop,
+    .session-modal-close {
+        transition: none !important;
+    }
+}

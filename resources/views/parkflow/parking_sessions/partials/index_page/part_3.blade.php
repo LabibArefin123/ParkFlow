@@ -6,11 +6,9 @@
                 Recent vehicle parking activity
             </div>
         </div>
-
         <div class="session-count">
             {{ $parkingSessions->total() }} Sessions
         </div>
-
     </div>
 
     @if ($parkingSessions->count())
@@ -30,33 +28,49 @@
                 </thead>
 
                 <tbody>
-
                     @foreach ($parkingSessions as $session)
-                        <tr style="animation-delay:{{ $loop->index * 40 }}ms">
+                        <tr class="session-clickable-row" style="animation-delay:{{ $loop->index * 40 }}ms"
+                            data-session-id="{{ $session->id }}"
+                            data-vehicle="{{ $session->vehicle?->registration_number ?? 'Unknown Vehicle' }}"
+                            data-vehicle-type="{{ ucfirst($session->vehicle?->vehicle_type ?? 'Vehicle') }}"
+                            data-owner="{{ $session->vehicle?->owner_name ?? 'Walk-in Customer' }}"
+                            data-phone="{{ $session->vehicle?->phone ?? 'Not provided' }}"
+                            data-spot="{{ $session->parkingSpot?->spot_number ?? '-' }}"
+                            data-floor="{{ $session->parkingSpot?->floor ?? '-' }}"
+                            data-location="{{ $session->parkingSpot?->parkingLocation?->name ?? 'Main Parking' }}"
+                            data-entry="{{ $session->entry_time?->format('d M Y, h:i A') ?? '-' }}"
+                            data-exit="{{ $session->exit_time?->format('d M Y, h:i A') ?? 'Not exited yet' }}"
+                            data-entry-gate="{{ $session->entry_gate ?? '-' }}"
+                            data-exit-gate="{{ $session->exit_gate ?? '-' }}"
+                            data-duration="{{ $session->duration_minutes ? floor($session->duration_minutes / 60) . 'h ' . $session->duration_minutes % 60 . 'm' : ($session->status === 'active' && $session->entry_time ? $session->entry_time->diffForHumans(now(), true) : '-') }}"
+                            data-fee="{{ number_format($session->parking_fee ?? 0, 2) }}"
+                            data-discount="{{ number_format($session->discount ?? 0, 2) }}"
+                            data-amount="{{ number_format($session->total_amount ?? ($session->parking_fee ?? 0), 2) }}"
+                            data-status="{{ ucfirst($session->status ?? 'Unknown') }}"
+                            data-payment-method="{{ ucfirst($session->payment?->payment_method ?? 'Not available') }}"
+                            data-payment-status="{{ ucfirst($session->payment?->status ?? 'Pending') }}"
+                            data-transaction="{{ $session->payment?->transaction_id ?? 'Not available' }}">
                             <td>
                                 <div class="vehicle-cell">
                                     <div class="vehicle-icon">
-                                        @if ($session->vehicle?->type === 'motorcycle')
+                                        @if ($session->vehicle?->vehicle_type === 'motorcycle')
                                             <i class="fa-solid fa-motorcycle"></i>
-                                        @elseif($session->vehicle?->type === 'microbus')
+                                        @elseif($session->vehicle?->vehicle_type === 'microbus')
                                             <i class="fa-solid fa-van-shuttle"></i>
-                                        @elseif($session->vehicle?->type === 'cng')
+                                        @elseif($session->vehicle?->vehicle_type === 'cng')
                                             <i class="fa-solid fa-taxi"></i>
                                         @else
                                             <i class="fa-solid fa-car-side"></i>
                                         @endif
                                     </div>
-
                                     <div>
                                         <div class="vehicle-number">
                                             {{ $session->vehicle?->registration_number ?? 'Unknown Vehicle' }}
                                         </div>
-
                                         <div class="vehicle-type">
-                                            {{ $session->vehicle?->type ?? 'Vehicle' }}
+                                            {{ $session->vehicle?->vehicle_type ?? 'Vehicle' }}
                                         </div>
                                     </div>
-
                                 </div>
                             </td>
 
@@ -64,8 +78,7 @@
                                 <div class="customer-name">
                                     {{ $session->vehicle?->owner_name ?? 'Walk-in Customer' }}
                                 </div>
-
-                                @if ($session->customer?->phone)
+                                @if ($session->vehicle?->phone)
                                     <div class="customer-phone">
                                         {{ $session->vehicle->phone }}
                                     </div>
@@ -77,7 +90,6 @@
                                     <i class="fa-solid fa-location-dot"></i>
                                     {{ $session->parkingSpot?->spot_number ?? '-' }}
                                 </span>
-
                                 @if ($session->parkingSpot?->parkingLocation)
                                     <div class="customer-phone">
                                         {{ $session->parkingSpot->parkingLocation->name }}
@@ -87,11 +99,10 @@
 
                             <td>
                                 <div class="time-value">
-                                    {{ $session->entry_time ? $session->entry_time->format('h:i A') : '-' }}
+                                    {{ $session->entry_time?->format('h:i A') ?? '-' }}
                                 </div>
-
                                 <div class="time-date">
-                                    {{ $session->entry_time ? $session->entry_time->format('d M Y') : '-' }}
+                                    {{ $session->entry_time?->format('d M Y') ?? '-' }}
                                 </div>
                             </td>
 
@@ -116,9 +127,7 @@
                             </td>
 
                             <td>
-
                                 <span class="status-badge {{ $session->status }}">
-
                                     @if ($session->status === 'active')
                                         <i class="fa-solid fa-circle"></i>
                                     @elseif($session->status === 'completed')
@@ -126,16 +135,13 @@
                                     @else
                                         <i class="fa-solid fa-xmark"></i>
                                     @endif
-
                                     {{ ucfirst($session->status) }}
-
                                 </span>
-
                             </td>
 
                             <td>
                                 <a href="{{ route('parking_sessions.show', $session) }}" class="session-view-btn"
-                                    title="View Session">
+                                    title="View Full Session">
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                 </a>
                             </td>
@@ -156,9 +162,9 @@
                 <i class="fa-solid fa-clock-rotate-left"></i>
             </div>
             <h3>No parking sessions found</h3>
-            <p>
-                There are no sessions matching your current filters.
-            </p>
+            <p>There are no sessions matching your current filters.</p>
         </div>
     @endif
 </div>
+
+@include('parkflow.parking_sessions.partials.session_modal')
